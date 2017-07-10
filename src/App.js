@@ -7,7 +7,8 @@ class App extends Component {
     super(props)
 
     this.state = {
-      channels: ['home', 'random', 'working']
+      channels: ['home', 'random', 'working'],
+      directChannels: ['Dallin', 'Cameron']
     }
   }
 
@@ -16,10 +17,17 @@ class App extends Component {
       <Nav key={i} channels={channel}/>
     ))
 
+    const directChannel = this.state.directChannels.map((dm, i) => (
+      <div>
+        {dm}
+      </div>
+    ))
+
     return (
       <div className="main-container">
         <nav className="nav-container">
           { navChannels }
+          { directChannel }
         </nav>
       </div>
     );
@@ -27,3 +35,7 @@ class App extends Component {
 }
 
 export default App;
+
+//todo: create directChannel component
+//todo: style the default top part of both dm & nav channels
+//todo: add redux into it and start creating reducers
