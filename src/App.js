@@ -25,9 +25,13 @@ class App extends Component {
     return (
       <div className="main-container">
         <nav className="nav-container">
-          <nav id="nav-channels">CHANNELS</nav>
+          <nav id="nav-channels">CHANNELS
+            <i className="fa fa-plus-circle" aria-hidden="true"></i>
+          </nav>
           { navChannels }
-          <nav id="nav-dm">DIRECT MESSAGES</nav>
+          <nav id="nav-dm">DIRECT MESSAGES
+            <i className="fa fa-plus-circle" aria-hidden="true"></i>
+          </nav>
           { directChannel }
         </nav>
       </div>
