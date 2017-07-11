@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 import './App.css';
 import Nav from './components/Nav/Nav'
 import DirectChannels from './components/DirectChannels/DirectChannels'
@@ -7,18 +8,18 @@ class App extends Component {
   constructor(props){
     super(props)
 
-    this.state = {
-      channels: ['home', 'random', 'working'],
-      directChannels: ['Dallin', 'Cameron']
-    }
+    //this.state = {
+    //  channels: ['home', 'random', 'working'],
+    //  directChannels: ['Dallin', 'Cameron']
+    //}
   }
 
   render() {
-    const navChannels = this.state.channels.map((channel, i) => (
+    const navChannels = this.props.channels.map((channel, i) => (
       <Nav key={i} channels={channel}/>
     ))
 
-    const directChannel = this.state.directChannels.map((dm, i) => (
+    const directChannel = this.props.directChannels.map((dm, i) => (
       <DirectChannels key={i} dm={dm}/>
     ))
 
@@ -39,7 +40,13 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state){
+  return {
+    channels: state.channels,
+    directChannels: state.directChannels
+  }
+}
 
-//todo: style the default top part of both dm & nav channels
+export default connect(mapStateToProps)(App)
+
 //todo: add redux into it and start creating reducers
