@@ -5,15 +5,6 @@ import Nav from './components/Nav/Nav'
 import DirectChannels from './components/DirectChannels/DirectChannels'
 
 class App extends Component {
-  constructor(props){
-    super(props)
-
-    //this.state = {
-    //  channels: ['home', 'random', 'working'],
-    //  directChannels: ['Dallin', 'Cameron']
-    //}
-  }
-
   render() {
     const navChannels = this.props.channels.map((channel, i) => (
       <Nav key={i} channels={channel}/>
@@ -48,5 +39,3 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(App)
-
-//todo: add redux into it and start creating reducers
