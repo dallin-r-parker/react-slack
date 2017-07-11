@@ -1,0 +1,12 @@
+@import '../../styles/base.scss';
+
+.channel-title{
+	font-family: $lato;
+	p {
+		margin:0;
+		padding:10px 11px 0;
+		span{
+			padding-right: 2px;
+		}
+	}
+}
