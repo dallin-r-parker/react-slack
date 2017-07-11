@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/* App Colors */
+/* App Font */
+/* App Mixins */
+/* App Variables */
+/* App Functions */
+.dm-title {
+  font-family: "Lato", sans-serif; }
+  .dm-title p {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    margin: 0; }
+    .dm-title p span {
+      display: inline-block;
+      background-color: #64D25A;
+      width: 11px;
+      height: 11px;
+      box-shadow: inset 0 0 0 2px #fff,0 0 0 2px #464646;
+      border-radius: 50%;
+      margin-right: 5px; }

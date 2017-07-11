@@ -1,4 +1,13 @@
-.channel-title p {
-  padding-left: 15px; }
-  .channel-title p span {
-    padding-right: 5px; }
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/* App Colors */
+/* App Font */
+/* App Mixins */
+/* App Variables */
+/* App Functions */
+.channel-title {
+  font-family: "Lato", sans-serif; }
+  .channel-title p {
+    margin: 0;
+    padding-left: 15px; }
+    .channel-title p span {
+      padding-right: 2px; }

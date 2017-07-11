@@ -1,12 +1,30 @@
+@import "./styles/base.scss";
+
 .main-container {
 	height: 100vh;
 	width: 100%;
+	font-family:$lato;
 	.nav-container{
+		font-size: 1.2em;
 		display: flex;
 		flex-direction:column;
 		background: #F8F8FA;
 		color: #94979B;
 		max-width: 15vw;
 		height:100%;
+		#nav-channels{
+			padding:15px 10px;
+			cursor: pointer;
+			&:hover{
+				color: black;
+			}
+		}
+		#nav-dm{
+			padding:15px 10px;
+			cursor: pointer;
+			&:hover{
+				color: black;
+			}
+		}
 	}
 }

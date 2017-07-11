@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Nav from './components/Nav/Nav'
+import DirectChannels from './components/DirectChannels/DirectChannels'
 
 class App extends Component {
   constructor(props){
@@ -18,15 +19,15 @@ class App extends Component {
     ))
 
     const directChannel = this.state.directChannels.map((dm, i) => (
-      <div>
-        {dm}
-      </div>
+      <DirectChannels key={i} dm={dm}/>
     ))
 
     return (
       <div className="main-container">
         <nav className="nav-container">
+          <nav id="nav-channels">CHANNELS</nav>
           { navChannels }
+          <nav id="nav-dm">DIRECT MESSAGES</nav>
           { directChannel }
         </nav>
       </div>
@@ -36,6 +37,5 @@ class App extends Component {
 
 export default App;
 
-//todo: create directChannel component
 //todo: style the default top part of both dm & nav channels
 //todo: add redux into it and start creating reducers
