@@ -10,10 +10,12 @@ class App extends Component {
     super(props)
 
     this.state = {
-      showModal: false
+      showModal: false,
+      newChannel: ''
     }
     this.handleOpenModal = this.handleOpenModal.bind(this)
     this.handleCloseModal = this.handleCloseModal.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleOpenModal(){
@@ -22,6 +24,10 @@ class App extends Component {
 
   handleCloseModal(){
     this.setState({showModal: false})
+  }
+
+  handleChange(value){
+    this.setState({newChannel: value})
   }
 
 
@@ -41,12 +47,14 @@ class App extends Component {
         <nav className="nav-container">
           <nav id="nav-channels">CHANNELS
             <i onClick={this.handleOpenModal}
-              className="fa fa-plus-circle" aria-hidden="true"></i>
-            {this.state.showModal ? <CreateChannel action={this.handleCloseModal}/> : null}
+              className="fa fa-plus-circle" aria-hidden="true">{/* */}</i>
+            {this.state.showModal ? <CreateChannel action={this.handleCloseModal}
+                                                   newChannel={this.handleChange}
+                                                   value={this.state.newChannel}/> : null}
           </nav>
           { navChannels }
           <nav id="nav-dm">DIRECT MESSAGES
-            <i className="fa fa-plus-circle" aria-hidden="true"></i>
+            <i className="fa fa-plus-circle" aria-hidden="true">{/* */}</i>
           </nav>
           { directChannel }
         </nav>
