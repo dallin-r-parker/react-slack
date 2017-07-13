@@ -23,11 +23,14 @@ class App extends Component {
   }
 
   handleCloseModal(){
-    this.setState({showModal: false})
+    this.setState({
+      showModal: false,
+      newChannel: ''
+    })
   }
 
   handleChange(value){
-    this.setState({newChannel: value})
+    this.setState({newChannel: value}, console.log(this.state.newChannel))
   }
 
 
