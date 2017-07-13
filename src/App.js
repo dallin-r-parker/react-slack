@@ -35,7 +35,7 @@ class App extends Component {
           <nav id="nav-channels">CHANNELS
             <i onClick={this.handleModal}
               className="fa fa-plus-circle" aria-hidden="true"></i>
-            {this.state.show ? <CreateChannel/> : null}
+            {this.state.show ? <CreateChannel /> : null}
           </nav>
           { navChannels }
           <nav id="nav-dm">DIRECT MESSAGES

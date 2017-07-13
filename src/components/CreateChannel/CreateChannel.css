@@ -27,7 +27,7 @@ body, html {
       color: black; }
     .create-channel-container .channel-wrap h5 {
       font-weight: lighter;
-      color: #858688;
+      color: #CDCECE;
       line-height: 20px; }
     .create-channel-container .channel-wrap p {
       margin: 0 0 7px;
@@ -39,7 +39,7 @@ body, html {
       height: 5vh;
       border-radius: 5px;
       outline: none;
-      border: 1px solid #858688;
+      border: 1px solid #CDCECE;
       margin-bottom: 20px;
       font-family: "Lato", sans-serif; }
     .create-channel-container .channel-wrap .btn-wrap {
@@ -53,10 +53,14 @@ body, html {
         font-weight: bold;
         margin-right: 10px;
         outline: none;
-        border: 0.5px solid #858688;
+        border: 0.5px solid #CDCECE;
         border-radius: 5px;
-        background: #EAEAE9;
-        color: #858688; }
+        background: white;
+        color: #555459;
+        cursor: pointer; }
+      .create-channel-container .channel-wrap .btn-wrap button:first-child:hover {
+        color: #2780F8;
+        background: white; }
       .create-channel-container .channel-wrap .btn-wrap button:nth-child(2) {
-        background: #858688;
+        background: #CDCECE;
         color: white; }
