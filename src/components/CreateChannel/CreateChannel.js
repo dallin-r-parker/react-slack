@@ -1,0 +1,18 @@
+import React from 'react'
+import './CreateChannel.css'
+
+export default function CreateChannel(props){
+	return (
+		<modal className="create-channel-container">
+			<section className="channel-wrap">
+				<h2>Create a private channel</h2>
+				<h5>Channels are where your team communicates. They're best when organized around a topic - #leads, for example</h5>
+					<p>Name</p>
+					<input type="text"/>
+
+					<p>Purpose</p>
+					<input type="text"/>
+			</section>
+		</modal>
+	)
+}

@@ -3,8 +3,23 @@ import {connect} from 'react-redux'
 import './App.css';
 import Nav from './components/Nav/Nav'
 import DirectChannels from './components/DirectChannels/DirectChannels'
+import CreateChannel from './components/CreateChannel/CreateChannel'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      show: false
+    }
+    this.handleModal = this.handleModal.bind(this)
+  }
+
+  handleModal(){
+    this.setState({show: true})
+  }
+
+
   render() {
     const navChannels = this.props.channels.map((channel, i) => (
       <Nav key={i} channels={channel}/>
@@ -18,7 +33,9 @@ class App extends Component {
       <div className="main-container">
         <nav className="nav-container">
           <nav id="nav-channels">CHANNELS
-            <i className="fa fa-plus-circle" aria-hidden="true"></i>
+            <i onClick={this.handleModal}
+              className="fa fa-plus-circle" aria-hidden="true"></i>
+            {this.state.show ? <CreateChannel/> : null}
           </nav>
           { navChannels }
           <nav id="nav-dm">DIRECT MESSAGES

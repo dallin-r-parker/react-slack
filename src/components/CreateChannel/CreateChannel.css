@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/* App Colors */
+/* App Font */
+/* App Mixins */
+/* App Variables */
+/* App Functions */
+body, html {
+  margin: 0;
+  padding: 0; }
+
+.create-channel-container {
+  cursor: default;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background: white;
+  color: lightgray; }
+  .create-channel-container .channel-wrap {
+    padding-top: 7%;
+    width: 42%;
+    border: 1px solid black; }
+    .create-channel-container .channel-wrap h2 {
+      font-size: 2em;
+      color: black; }
+    .create-channel-container .channel-wrap h5 {
+      font-weight: lighter;
+      color: #717274; }
+    .create-channel-container .channel-wrap p {
+      margin: 0; }
+    .create-channel-container .channel-wrap input {
+      width: 97%;
+      height: 5vh;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid #717274; }
