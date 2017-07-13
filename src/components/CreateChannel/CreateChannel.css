@@ -21,19 +21,42 @@ body, html {
   color: lightgray; }
   .create-channel-container .channel-wrap {
     padding-top: 7%;
-    width: 42%;
-    border: 1px solid black; }
+    width: 42%; }
     .create-channel-container .channel-wrap h2 {
       font-size: 2em;
       color: black; }
     .create-channel-container .channel-wrap h5 {
       font-weight: lighter;
-      color: #717274; }
+      color: #858688;
+      line-height: 20px; }
     .create-channel-container .channel-wrap p {
-      margin: 0; }
+      margin: 0 0 7px;
+      color: #464646; }
     .create-channel-container .channel-wrap input {
+      font-size: 1em;
+      padding-left: 10px;
       width: 97%;
       height: 5vh;
       border-radius: 5px;
       outline: none;
-      border: 1px solid #717274; }
+      border: 1px solid #858688;
+      margin-bottom: 20px;
+      font-family: "Lato", sans-serif; }
+    .create-channel-container .channel-wrap .btn-wrap {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 7px;
+      font-family: "Lato", sans-serif; }
+      .create-channel-container .channel-wrap .btn-wrap button {
+        padding: 13px;
+        font-size: .9em;
+        font-weight: bold;
+        margin-right: 10px;
+        outline: none;
+        border: 0.5px solid #858688;
+        border-radius: 5px;
+        background: #EAEAE9;
+        color: #858688; }
+      .create-channel-container .channel-wrap .btn-wrap button:nth-child(2) {
+        background: #858688;
+        color: white; }

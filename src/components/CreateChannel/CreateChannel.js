@@ -8,10 +8,15 @@ export default function CreateChannel(props){
 				<h2>Create a private channel</h2>
 				<h5>Channels are where your team communicates. They're best when organized around a topic - #leads, for example</h5>
 					<p>Name</p>
-					<input type="text"/>
+					<input type="text" placeholder="e.g. leads"/>
 
 					<p>Purpose</p>
 					<input type="text"/>
+
+					<div className="btn-wrap">
+						<button>Cancel</button>
+						<button>Create channel</button>
+					</div>
 			</section>
 		</modal>
 	)
