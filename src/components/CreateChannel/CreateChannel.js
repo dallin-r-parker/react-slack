@@ -2,6 +2,9 @@ import React from 'react'
 import './CreateChannel.css'
 
 export default function CreateChannel(props){
+	function handleCancel(){
+		props.action()
+	}
 	return (
 		<modal className="create-channel-container">
 			<section className="channel-wrap">
@@ -14,7 +17,7 @@ export default function CreateChannel(props){
 					<input type="text"/>
 
 					<div className="btn-wrap">
-						<button>Cancel</button>
+						<button onClick={handleCancel}>Cancel</button>
 						<button>Create channel</button>
 					</div>
 			</section>
