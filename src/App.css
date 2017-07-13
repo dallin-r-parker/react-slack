@@ -21,16 +21,22 @@ body, html {
     max-width: 15vw;
     height: 100%; }
     .main-container .nav-container #nav-channels {
-      display: flex;
-      justify-content: space-between;
       padding: 15px 10px;
       cursor: pointer; }
       .main-container .nav-container #nav-channels:hover {
         color: black; }
+      .main-container .nav-container #nav-channels p {
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+        width: 100%; }
     .main-container .nav-container #nav-dm {
-      display: flex;
-      justify-content: space-between;
       padding: 15px 10px;
       cursor: pointer; }
       .main-container .nav-container #nav-dm:hover {
         color: black; }
+      .main-container .nav-container #nav-dm p {
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+        width: 100%; }

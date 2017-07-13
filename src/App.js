@@ -45,16 +45,19 @@ class App extends Component {
     return (
       <div className="main-container">
         <nav className="nav-container">
-          <nav id="nav-channels">CHANNELS
-            <i onClick={this.handleOpenModal}
-              className="fa fa-plus-circle" aria-hidden="true">{/* */}</i>
+          <nav id="nav-channels">
+            <p onClick={this.handleOpenModal}>CHANNELS
+             <i onClick={this.handleOpenModal} className="fa fa-plus-circle" aria-hidden="true">{/* */}</i>
+            </p>
             {this.state.showModal ? <CreateChannel action={this.handleCloseModal}
                                                    newChannel={this.handleChange}
                                                    value={this.state.newChannel}/> : null}
           </nav>
           { navChannels }
-          <nav id="nav-dm">DIRECT MESSAGES
-            <i className="fa fa-plus-circle" aria-hidden="true">{/* */}</i>
+          <nav id="nav-dm">
+            <p>DIRECT MESSAGES
+              <i className="fa fa-plus-circle" aria-hidden="true">{/* */}</i>
+            </p>
           </nav>
           { directChannel }
         </nav>
