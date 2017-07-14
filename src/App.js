@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   handleChange(value){
-    this.setState({newChannel: value}, console.log(this.state.newChannel))
+    this.setState({newChannel: value})
   }
 
 
