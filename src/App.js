@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import axios from 'axios'
 import './App.css';
 import Nav from './components/Nav/Nav'
 import DirectChannels from './components/DirectChannels/DirectChannels'
@@ -16,7 +17,6 @@ class App extends Component {
   }
   
   handleAddChannel(){
-    console.log("working")
 	  this.props.addChannel(this.state.newChannel)
   }
 
@@ -27,7 +27,12 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.props.getChannels()
+    axios({
+	    url: 'http://localhost:8080/api/channels',
+		  method: 'GET'
+    }).then(res => {
+      this.props.getChannels(res.data)
+    })
   }
   
   render() {
@@ -43,11 +48,11 @@ class App extends Component {
       <div className="main-container">
         <nav className="nav-container">
           <nav id="nav-channels">CHANNELS
-            <i className="fa fa-plus-circle" aria-hidden="true"></i>
+            <i className="fa fa-plus-circle" aria-hidden="true">{/* */}</i>
           </nav>
           { navChannels }
           <nav id="nav-dm">DIRECT MESSAGES
-            <i className="fa fa-plus-circle" aria-hidden="true"></i>
+            <i className="fa fa-plus-circle" aria-hidden="true">{/* */}</i>
           </nav>
           { directChannel }
         </nav>
@@ -63,6 +68,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
+  console.log(state)
   return {
     channels: state.channels,
     directChannels: state.directChannels

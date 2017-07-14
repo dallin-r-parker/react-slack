@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
 import store from './redux/store'
-import promiseMiddleware from 'redux-promise'
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
