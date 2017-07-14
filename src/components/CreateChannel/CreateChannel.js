@@ -10,6 +10,10 @@ export default function CreateChannel(props){
 		props.newChannel(e.target.value)
 	}
 
+	function handleCreate(){
+		props.add()
+	}
+
 	return (
 		<modal className="create-channel-container">
 			<section className="channel-wrap">
@@ -25,7 +29,7 @@ export default function CreateChannel(props){
 
 					<div className="btn-wrap">
 						<button onClick={handleCancel}>Cancel</button>
-						<button>Create channel</button>
+						<button onClick={handleCreate}>Create channel</button>
 					</div>
 			</section>
 		</modal>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
 import './App.css';
 import Nav from './components/Nav/Nav'
 import DirectChannels from './components/DirectChannels/DirectChannels'
@@ -11,11 +10,14 @@ class App extends Component {
 
     this.state = {
       showModal: false,
-      newChannel: ''
+      newChannel: '',
+	    channels: ['home', 'random', 'working', 'devTeam'],
+	    directChannels: ['Dallin', 'Cameron', 'Mikayda']
     }
     this.handleOpenModal = this.handleOpenModal.bind(this)
     this.handleCloseModal = this.handleCloseModal.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.addChannel = this.addChannel.bind(this)
   }
 
   handleOpenModal(){
@@ -33,15 +35,20 @@ class App extends Component {
     this.setState({newChannel: value})
   }
 
-
+  addChannel(){
+    this.setState({
+      channels: [...this.state.channels, this.state.newChannel],
+      showModal: false
+    })
+  }
 
 
   render() {
-    const navChannels = this.props.channels.map((channel, i) => (
+    const navChannels = this.state.channels.map((channel, i) => (
       <Nav key={i} channels={channel}/>
     ))
 
-    const directChannel = this.props.directChannels.map((dm, i) => (
+    const directChannel = this.state.directChannels.map((dm, i) => (
       <DirectChannels key={i} dm={dm}/>
     ))
 
@@ -54,6 +61,7 @@ class App extends Component {
             </p>
             {this.state.showModal ? <CreateChannel action={this.handleCloseModal}
                                                    newChannel={this.handleChange}
+                                                   add={this.addChannel}
                                                    value={this.state.newChannel}/> : null}
           </nav>
           { navChannels }
@@ -69,11 +77,4 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state){
-  return {
-    channels: state.channels,
-    directChannels: state.directChannels
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default App
