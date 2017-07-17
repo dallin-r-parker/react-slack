@@ -19,3 +19,12 @@ export function handleModal(value) {
 		payload: value
 	}
 }
+
+export function handleChannelChange(value) {
+	console.log("action value: ", value)
+	return {
+		type: 'ADD_NEW_CHANNEL',
+		payload: value
+	}
+
+}
