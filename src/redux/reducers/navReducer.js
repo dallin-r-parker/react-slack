@@ -5,8 +5,6 @@ const initialState = {
 	newChannel: ''
 }
 
-console.log(initialState.newChannel)
-
 export default function reducer(state=initialState, action){
 	const {type, payload} = action
 

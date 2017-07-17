@@ -12,12 +12,10 @@ const channels = ['lead', 'random', 'working', 'devTeam'];
 
 
 app.get('/api/channels', (req, res, next) => {
-	console.log("Getting: ", req.body)
 	res.status(200).send(channels)
 })
 
 app.post('/api/addchannels', (req, res, next) => {
-	console.log("POsting: ", req.body)
 })
 
 
