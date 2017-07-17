@@ -1,0 +1,9 @@
+.login-main-container {
+  width: 100vw; }
+  .login-main-container .input-component-wrap {
+    width: 100vw;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -150px; }

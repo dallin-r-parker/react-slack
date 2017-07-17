@@ -30,9 +30,7 @@ export default function CreateChannel(props){
 
 				<div className="btn-wrap">
 					<button onClick={handleCancel}>Cancel</button>
-					<button onClick={handleCreate}
-					        className={applyStyle}
-									>Create channel</button>
+					<button onClick={handleCreate}>Create channel</button>
 				</div>
 			</section>
 		</modal>
