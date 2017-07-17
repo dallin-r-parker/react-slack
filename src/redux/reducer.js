@@ -13,12 +13,12 @@ export default function reducer(state=initialState, action){
 	switch(type){
 		case ADD_CHANNEL:
 			return Object.assign({}, state, {channels: [...state.channels, payload]})
-		case 'GET_CHANNELS':
+		case GET_CHANNELS:
 			return Object.assign({}, state, {channels: [...state.channels, ...payload]})
 		default:
 			return state
 	}
-	
+
 }
 
 export function addChannel(channel){
