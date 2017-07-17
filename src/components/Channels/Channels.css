@@ -6,6 +6,9 @@
 /* App Functions */
 .channel-title {
   font-family: "Lato", sans-serif; }
+  .channel-title:hover {
+    color: black;
+    cursor: pointer; }
   .channel-title p {
     margin: 0;
     padding: 10px 11px 0; }

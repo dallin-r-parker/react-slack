@@ -54,6 +54,8 @@
         background: white;
         color: #555459;
         cursor: pointer; }
+      .create-channel-container .channel-wrap .btn-wrap .active {
+        background: #64D25A !important; }
       .create-channel-container .channel-wrap .btn-wrap button:first-child:hover {
         color: #2780F8;
         background: white; }

@@ -11,6 +11,7 @@ app.use(bodyParser.json())
 const channels = ['lead', 'random', 'working', 'devTeam'];
 
 
+
 app.get('/api/channels', (req, res, next) => {
 	res.status(200).send(channels)
 })

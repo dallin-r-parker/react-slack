@@ -2,16 +2,17 @@ import React from 'react'
 import './CreateChannel.css'
 
 export default function CreateChannel(props){
-	function handleCancel(){
-		props.action()
-	}
+	let applyStyle = null
 
-	function channelInput(e){
-		props.newChannel(e.target.value)
-	}
+	const handleCancel = () => (props.action())
+	const handleCreate = () => (props.add())
 
-	function handleCreate(){
-		props.add()
+	 const channelInput = (e) => {
+		if(e.target.value){
+			console.log("HERE: ", e.target.value)
+			return applyStyle = 'active' &&
+			props.newChannel(e.target.value)
+		}
 	}
 
 	return (
@@ -29,7 +30,9 @@ export default function CreateChannel(props){
 
 				<div className="btn-wrap">
 					<button onClick={handleCancel}>Cancel</button>
-					<button onClick={handleCreate}>Create channel</button>
+					<button onClick={handleCreate}
+					        className={applyStyle}
+									>Create channel</button>
 				</div>
 			</section>
 		</modal>

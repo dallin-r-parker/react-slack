@@ -11,8 +11,7 @@ import {addChannel, getChannels, handleModal, handleChannelChange } from './redu
 class App extends Component {
 	constructor(props) {
 		super(props)
-
-
+		
 		this.handleAddChannel = this.handleAddChannel.bind(this)
 		this.handleOpenModal = this.handleOpenModal.bind(this)
 		this.handleCloseModal = this.handleCloseModal.bind(this)
@@ -24,9 +23,7 @@ class App extends Component {
 		this.handleCloseModal()
 	}
 
-	handleChange(e) {
-		this.props.handleChannelChange(e)
-	}
+	handleChange = (e) => (this.props.handleChannelChange(e))
 
 	handleOpenModal() {
 		let value = true
@@ -39,12 +36,9 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		axios({
-			url: 'http://localhost:8080/api/channels',
-			method: 'GET'
-		}).then(res => {
-			this.props.getChannels(res.data)
-		})
+		axios.get('http://localhost:8080/api/channels')
+			.then(res => this.props.getChannels(res.data))
+			.catch(err => console.log(err))
 	}
 
 	render() {
@@ -78,12 +72,12 @@ class App extends Component {
 		)
 	}
 }
-function mapStateToProps(state) {
+function mapStateToProps({navReducer}) {
 	return {
-		channels: state.channels,
-		directChannels: state.directChannels,
-		showModal: state.showModal,
-		newChannel: state.newChannel
+		channels: navReducer.channels,
+		directChannels: navReducer.directChannels,
+		showModal: navReducer.showModal,
+		newChannel: navReducer.newChannel
 	}
 }
 export default connect(mapStateToProps, {addChannel, getChannels, handleModal, handleChannelChange})(App)

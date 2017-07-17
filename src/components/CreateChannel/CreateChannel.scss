@@ -55,6 +55,7 @@
 				color: $drk-grey;
 				cursor: pointer;
 			}
+			.active{background: $active-green !important}
 			button:first-child:hover{
 				color:$royal-blue;
 				background:white;
