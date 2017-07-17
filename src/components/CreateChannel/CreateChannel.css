@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/* App Colors */
+/* App Font */
+/* App Mixins */
+/* App Variables */
+/* App Functions */
+.create-channel-container {
+  cursor: default;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background: white;
+  color: lightgray; }
+  .create-channel-container .channel-wrap {
+    padding-top: 7%;
+    width: 42%; }
+    .create-channel-container .channel-wrap h2 {
+      font-size: 2em;
+      color: black; }
+    .create-channel-container .channel-wrap h5 {
+      font-weight: lighter;
+      color: #CDCECE;
+      line-height: 20px; }
+    .create-channel-container .channel-wrap p {
+      margin: 0 0 7px;
+      color: #464646; }
+    .create-channel-container .channel-wrap input {
+      font-size: 1em;
+      padding-left: 10px;
+      width: 97%;
+      height: 5vh;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid #CDCECE;
+      margin-bottom: 20px;
+      font-family: "Lato", sans-serif; }
+    .create-channel-container .channel-wrap .btn-wrap {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 7px;
+      font-family: "Lato", sans-serif; }
+      .create-channel-container .channel-wrap .btn-wrap button {
+        padding: 13px;
+        font-size: .9em;
+        font-weight: bold;
+        margin-right: 10px;
+        outline: none;
+        border: 0.5px solid #CDCECE;
+        border-radius: 5px;
+        background: white;
+        color: #555459;
+        cursor: pointer; }
+      .create-channel-container .channel-wrap .btn-wrap button:first-child:hover {
+        color: #2780F8;
+        background: white; }
+      .create-channel-container .channel-wrap .btn-wrap button:nth-child(2) {
+        background: #CDCECE;
+        color: white; }

@@ -1,0 +1,68 @@
+@import '../../styles/base.scss';
+
+.create-channel-container{
+	cursor: default;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content:center;
+	top: 0;
+	left: 0;
+	background: white;
+	color: lightgray;
+	.channel-wrap{
+		padding-top:7%;
+		width: 42%;
+		h2{
+			font-size: 2em;
+			color: black;
+		}
+		h5{
+			font-weight:lighter;
+			color: $light-grey;
+			line-height:20px;
+		}
+		p{
+			margin:0 0 7px;
+			color: #464646;
+		}
+		input{
+			font-size:1em;
+			padding-left: 10px;
+			width: 97%;
+			height: 5vh;
+			border-radius: 5px;
+			outline: none;
+			border: 1px solid $light-grey;
+			margin-bottom:20px;
+			font-family:$lato;
+		}
+		.btn-wrap{
+			display: flex;
+			justify-content: flex-end;
+			padding-right: 7px;
+			font-family:$lato;
+			button{
+				padding: 13px;
+				font-size: .9em;
+				font-weight: bold;
+				margin-right:10px;
+				outline:none;
+				border: .5px solid $light-grey;
+				border-radius: 5px;
+				background: white;
+				color: $drk-grey;
+				cursor: pointer;
+			}
+			button:first-child:hover{
+				color:$royal-blue;
+				background:white;
+			}
+			button:nth-child(2){
+				background: $light-grey;
+				color: white;
+			}
+		}
+	}
+}

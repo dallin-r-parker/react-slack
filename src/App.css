@@ -21,6 +21,11 @@
       justify-content: space-between;
       padding: 15px 10px;
       cursor: pointer; }
+      .main-container .nav-container #nav-channels p {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between; }
       .main-container .nav-container #nav-channels:hover {
         color: black; }
     .main-container .nav-container #nav-dm {
@@ -28,5 +33,10 @@
       justify-content: space-between;
       padding: 15px 10px;
       cursor: pointer; }
+      .main-container .nav-container #nav-dm p {
+        margin: 15px 0 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between; }
       .main-container .nav-container #nav-dm:hover {
         color: black; }

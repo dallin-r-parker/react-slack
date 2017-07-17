@@ -17,6 +17,12 @@
 			justify-content:space-between;
 			padding:15px 10px;
 			cursor: pointer;
+			p{
+				margin: 0;
+				width: 100%;
+				display: flex;
+				justify-content:space-between;
+			}
 			&:hover{
 				color: black;
 			}
@@ -26,6 +32,12 @@
 			justify-content:space-between;
 			padding:15px 10px;
 			cursor: pointer;
+			p{
+				margin: 15px 0 0;
+				width: 100%;
+				display: flex;
+				justify-content:space-between;
+			}
 			&:hover{
 				color: black;
 			}
