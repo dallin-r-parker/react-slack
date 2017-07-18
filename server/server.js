@@ -18,6 +18,10 @@ app.get('/api/channels', (req, res, next) => {
 app.post('/api/addchannels', (req, res, next) => {
 })
 
+app.post('/api/login', (req, res, next) => {
+	console.log(req.body)
+})
+
 
 app.listen(port, () => {
 	console.log(`listening on ${port}`)

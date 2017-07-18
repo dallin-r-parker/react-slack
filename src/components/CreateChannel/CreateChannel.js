@@ -2,16 +2,14 @@ import React from 'react'
 import './CreateChannel.css'
 
 export default function CreateChannel(props){
-	function handleCancel(){
-		props.action()
-	}
 
-	function channelInput(e){
-		props.newChannel(e.target.value)
-	}
+	const handleCancel = () => (props.action())
+	const handleCreate = () => (props.add())
 
-	function handleCreate(){
-		props.add()
+	 const channelInput = (e) => {
+		if(e.target.value){
+			props.newChannel(e.target.value)
+		}
 	}
 
 	return (

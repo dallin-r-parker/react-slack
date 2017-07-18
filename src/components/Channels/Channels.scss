@@ -2,6 +2,10 @@
 
 .channel-title{
 	font-family: $lato;
+	&:hover{
+		color: black;
+		cursor: pointer;
+	}
 	p {
 		margin:0;
 		padding:10px 11px 0;

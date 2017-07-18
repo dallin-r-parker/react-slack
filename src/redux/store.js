@@ -1,7 +1,15 @@
-import {createStore, applyMiddleware} from 'redux'
-import reducer from './reducers/navReducer'
+import {createStore, applyMiddleware, combineReducers} from 'redux'
+import navReducer from './reducers/navReducer'
+import loginReducer from './reducers/loginReducer'
 import thunk from 'redux-thunk'
 
 const middleware = applyMiddleware(thunk)
 
-export default createStore(reducer, middleware)
+function combine(){
+	return {
+		navReducer,
+		loginReducer
+	}
+}
+
+export default createStore(combineReducers(combine()), middleware)
