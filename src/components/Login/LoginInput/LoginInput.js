@@ -3,8 +3,7 @@ import './LoginInput.css'
 
 
 export default function LoginInput(props) {
-	console.log(props)
-	
+
 	function handleEmail(e) {
 		props.email(e.target.value)
 	}
@@ -13,8 +12,10 @@ export default function LoginInput(props) {
 		props.password(e.target.value)
 	}
 
+	function handleLogin() {
+		props.login()
+	}
 
-	
 	return(
 		<section className="input-container">
 			<h1>Sign in to your team</h1>
@@ -27,7 +28,7 @@ export default function LoginInput(props) {
 				       type="password"
 				       placeholder="password"/>
 
-				<button>Continue</button>
+				<button onClick={handleLogin}>Continue</button>
 		</section>
 	)
 }

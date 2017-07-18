@@ -2,15 +2,12 @@ import React from 'react'
 import './CreateChannel.css'
 
 export default function CreateChannel(props){
-	let applyStyle = null
 
 	const handleCancel = () => (props.action())
 	const handleCreate = () => (props.add())
 
 	 const channelInput = (e) => {
 		if(e.target.value){
-			console.log("HERE: ", e.target.value)
-			return applyStyle = 'active' &&
 			props.newChannel(e.target.value)
 		}
 	}
