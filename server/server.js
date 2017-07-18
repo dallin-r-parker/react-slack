@@ -15,12 +15,12 @@ app.use(cors())
 app.use(bodyParser.json())
 
 // PASSPORT STRATEGY ===================================
-const passport = require('./controllers/auth/passport')
+const passport = require('./auth/passport')
 
 // MASSIVE DB ==========================================
 massive(process.env.DB_CONNECTION).then(db => {
 	app.set('db', db)
-}).catch((err) => (console.log("massive DB Error: ", err)))
+}).catch((err) => (console.log("DB Error: ", err)))
 
 const channels = ['lead', 'random', 'working', 'devTeam'];
 
@@ -37,6 +37,17 @@ app.use(session({
 }));
 app.use(passport.initialize())
 app.use(passport.session())
+
+// SERVER CONTROLLERS ==================================
+const { registerUser, successUser } = require('./controllers/userCtrl');
+
+// LOCAL AUTH ENDPOINTS ================================
+app.post('/api/login', passport.authenticate('local', {
+	successRedirect: '/success',
+}));
+app.get('/success', checkAuthed, successUser)
+app.get('/api/current-user', checkAuthed)
+app.post('/api/register', registerUser)
 
 
 app.get('/api/channels', (req, res, next) => {
