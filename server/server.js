@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 
 // INITIATE EXPRESS APP & SET LISTENING PORT ================
 const app = module.exports = express();
-app.set('port', process.env.PORT || 8080)
+app.set('port', process.env.PORT || 5050)
 
 // MIDDLEWARE FOR EVERYTHING TO PASS THROUGH ================
 app.use(cors())
@@ -24,31 +24,39 @@ massive(process.env.DB_CONNECTION).then(db => {
 
 const channels = ['lead', 'random', 'working', 'devTeam'];
 
-// MIDDLEWARE POLICY ===================================
-const checkAuthed = (req, res, next) => {
-	if(!req.isAuthenticated()) return res.status(401).send("Unauthorized")
-	return next()
-};
-
 // EXPRESS SESSIONS =====================================
 app.use(session({
+	secret: process.env.SESSION_SECRET,
 	saveUninitialized: false,
-	resave: false
+	resave: false,
+	cookie: {
+		secure: true
+	}
 }));
-app.use(passport.initialize())
-app.use(passport.session())
+//app.use(passport.initialize())
+//app.use(passport.session())
+
+// MIDDLEWARE POLICY ===================================
+//const checkAuthed = (req, res, next) => {
+//	console.log('middleware: ', req.isAuthenticated())
+//  if(!req.isAuthenticated()) return res.status(401).send("Unauthorized")
+//	return next()
+//};
 
 // SERVER CONTROLLERS ==================================
-const { registerUser, successUser } = require('./controllers/userCtrl');
+//const { registerUser, successUser } = require('./controllers/userCtrl');
 
 // LOCAL AUTH ENDPOINTS ================================
-app.post('/api/login', passport.authenticate('local', {
-	successRedirect: '/success',
-}));
-app.get('/success', checkAuthed, successUser)
-app.get('/api/current-user', checkAuthed)
-app.post('/api/register', registerUser)
+//app.post('/api/login', passport.authenticate('local', {
+//	successRedirect: '/success',
+//}));
+//app.get('/success', checkAuthed, successUser)
+//app.get('/api/current-user', checkAuthed)
+//app.post('/api/register', registerUser)
 
+app.post('/api/login', (req, res, next) => {
+	(req.body) ? res.status(200).send(req.body) : res.status(404).send()
+})
 
 app.get('/api/channels', (req, res, next) => {
 	res.status(200).send(channels)
@@ -57,9 +65,6 @@ app.get('/api/channels', (req, res, next) => {
 app.post('/api/addchannels', (req, res, next) => {
 })
 
-app.post('/api/login', (req, res, next) => {
-	console.log(req.body)
-})
 
 
 app.listen(app.get('port'), () => {

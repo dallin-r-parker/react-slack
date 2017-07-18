@@ -25,9 +25,9 @@ class Login extends Component{
 
 		axios({
 			method:'POST',
-			url: 'http://localhost:8080/api/login',
+			url: '/api/login',
 			data: {email, password}
-		}).then(res => console.log(res))
+		}).then(res => console.log("WORKING: ", res))
 			.catch(err => console.log(err))
 	}
 

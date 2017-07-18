@@ -11,6 +11,7 @@ hashPW = (password) => {
 exports.registerUser = (req, res, next) => {
 	const db = app.get('db');
 	const { firstname, lastname, email, password } = req.body
+	console.log(firstname, lastname, email, password)
 	const pw = hashPW(password)
 
 	db.check_by_email([email]).then(user => {
@@ -31,5 +32,6 @@ exports.successUser = (req, res, next) => {
 	if(!user) return res.status(401).send("User Not Found")
 	delete user[0].password
 	delete user[0].email
+	console.log("successFinal: ", user)
 	return res.status(200).send(user)
 }
