@@ -5,6 +5,7 @@ const initialState = {
 }
 
 
+
 export default function loginReducer(state=initialState,action) {
 	const {type, payload} = action
 
@@ -13,6 +14,8 @@ export default function loginReducer(state=initialState,action) {
 			return Object.assign({}, state, {email: payload})
 		case 'USER_PW':
 			return Object.assign({}, state, {password: payload})
+		case 'USER_AUTHED':
+			return Object.assign({}, state, {authed: true})
 		default:
 			return state
 	}

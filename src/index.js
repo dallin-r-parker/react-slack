@@ -9,7 +9,6 @@ import Login from './components/Login/Login/Login'
 import registerServiceWorker from './registerServiceWorker';
 
 
-
 ReactDOM.render(
 	<Provider store={store}>
 		<HashRouter>

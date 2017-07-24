@@ -36,7 +36,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://localhost:8080/api/channels')
+		axios.get('/api/channels')
 			.then(res => this.props.getChannels(res.data))
 			.catch(err => console.log(err))
 	}

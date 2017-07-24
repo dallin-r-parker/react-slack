@@ -14,9 +14,6 @@ app.set('port', process.env.PORT || 5050)
 app.use(cors())
 app.use(bodyParser.json())
 
-// PASSPORT STRATEGY ===================================
-const passport = require('./auth/passport')
-
 // MASSIVE DB ==========================================
 massive(process.env.DB_CONNECTION).then(db => {
 	app.set('db', db)
@@ -28,35 +25,21 @@ const channels = ['lead', 'random', 'working', 'devTeam'];
 app.use(session({
 	secret: process.env.SESSION_SECRET,
 	saveUninitialized: false,
-	resave: false,
-	cookie: {
-		secure: true
-	}
+	resave: false
 }));
-//app.use(passport.initialize())
-//app.use(passport.session())
 
-// MIDDLEWARE POLICY ===================================
-//const checkAuthed = (req, res, next) => {
-//	console.log('middleware: ', req.isAuthenticated())
-//  if(!req.isAuthenticated()) return res.status(401).send("Unauthorized")
-//	return next()
-//};
 
 // SERVER CONTROLLERS ==================================
-//const { registerUser, successUser } = require('./controllers/userCtrl');
+const {loginUser} = require('./controllers/userCtrl')
+//AUTH ENDPOINTS ================================
 
-// LOCAL AUTH ENDPOINTS ================================
-//app.post('/api/login', passport.authenticate('local', {
-//	successRedirect: '/success',
-//}));
-//app.get('/success', checkAuthed, successUser)
-//app.get('/api/current-user', checkAuthed)
+
+app.post('/api/login', loginUser)
+
+//app.get('/success', checkAuthed)
+//app.get('/api/current-user', loginUser)
 //app.post('/api/register', registerUser)
 
-app.post('/api/login', (req, res, next) => {
-	(req.body) ? res.status(200).send(req.body) : res.status(404).send()
-})
 
 app.get('/api/channels', (req, res, next) => {
 	res.status(200).send(channels)

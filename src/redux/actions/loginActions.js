@@ -11,3 +11,10 @@ export function addPw(value) {
 		payload: value
 	}
 }
+
+export function userAuthed(value) {
+	return {
+		type: 'USER_AUTHED',
+		payload: value
+	}
+}
