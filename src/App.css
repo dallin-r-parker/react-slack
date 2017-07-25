@@ -43,4 +43,5 @@
       .main-container .nav-container #nav-dm:hover {
         color: black; }
   .main-container .message-container {
-    width: calc(100vw - 15vw); }
+    width: calc(100vw - 15vw);
+    height: 100vh; }
