@@ -4,7 +4,7 @@ import axios from 'axios'
 import './Login.css'
 import LoginHeader from '../LoginHeader/LoginHeader'
 import LoginInput from '../LoginInput/LoginInput'
-import {addEmail, addPw} from '../../../redux/actions/loginActions'
+import {addEmail, addPw, userAuthed} from '../../../redux/actions/loginActions'
 
 
 class Login extends Component{
@@ -20,14 +20,12 @@ class Login extends Component{
 
 	handlePassword = (e) => (this.props.addPw(e))
 
-	handleLogin(){
+	handleLogin() {
 		const {email, password} = this.props
+		const user = Object.assign({}, {email, password})
 
-		axios({
-			method:'POST',
-			url: 'http://localhost:8080/api/login',
-			data: {email, password}
-		}).then(res => console.log(res))
+		axios.post('/api/login',{data: user})
+			.then(res => this.props.userAuthed(res.data))
 			.catch(err => console.log(err))
 	}
 
@@ -53,4 +51,4 @@ function mapStateToProps({loginReducer}) {
 	}
 }
 
-export default connect(mapStateToProps, {addEmail, addPw})(Login)
+export default connect(mapStateToProps, {addEmail, addPw, userAuthed})(Login)
