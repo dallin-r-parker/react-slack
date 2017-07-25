@@ -5,6 +5,7 @@ import './App.css'
 import Nav from './components/Nav/Nav'
 import DirectChannels from './components/DirectChannels/DirectChannels'
 import CreateChannel from './components/CreateChannel/CreateChannel'
+import Messages from './components/Messages/Messages'
 import {addChannel, getChannels, handleModal, handleChannelChange } from './redux/actions/navActions'
 
 
@@ -68,7 +69,11 @@ class App extends Component {
 					</nav>
 					{ directChannel }
 				</nav>
+				<div className="message-container">
+					<Messages/>
+				</div>
 			</div>
+
 		)
 	}
 }

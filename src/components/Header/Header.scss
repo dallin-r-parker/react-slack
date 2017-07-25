@@ -1,0 +1,36 @@
+@import "../../styles/base.scss";
+header {
+	background: white;
+	display: flex;
+	position: fixed;
+	justify-content:flex-end;
+	height: 8vh;
+	width: 85vw;
+	color: $header-grey;
+	font-size: 1.3em;
+	border-bottom: 1px solid #E8E8E8;
+	.right-wrap {
+		width: 35%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		input {
+			height: 4vh;
+			border-radius: 5px;
+			border: 1px solid $header-grey;
+			width: 50%;
+			padding-left: 5px;
+			font-size: .9em;
+			&:focus{
+				outline: none;
+			}
+			&::placeholder {
+				color: #CDCECE;
+			}
+		}
+		i:hover {
+			color: $royal-blue;
+			cursor: pointer;
+		}
+	}
+}

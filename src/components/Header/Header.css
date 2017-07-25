@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/* App Colors */
+/* App Font */
+/* App Mixins */
+/* App Variables */
+/* App Functions */
+header {
+  background: white;
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+  height: 8vh;
+  width: 85vw;
+  color: #A0A0A2;
+  font-size: 1.3em;
+  border-bottom: 1px solid #E8E8E8; }
+  header .right-wrap {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+    header .right-wrap input {
+      height: 4vh;
+      border-radius: 5px;
+      border: 1px solid #A0A0A2;
+      width: 50%;
+      padding-left: 5px;
+      font-size: .9em; }
+      header .right-wrap input:focus {
+        outline: none; }
+      header .right-wrap input::placeholder {
+        color: #CDCECE; }
+    header .right-wrap i:hover {
+      color: #2780F8;
+      cursor: pointer; }
