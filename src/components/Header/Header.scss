@@ -1,10 +1,11 @@
 @import "../../styles/base.scss";
 header {
+	font-family: $lato;
 	background: white;
 	display: flex;
 	position: fixed;
 	justify-content:flex-end;
-	height: 8vh;
+	height: 6vh;
 	width: 85vw;
 	color: $header-grey;
 	font-size: 1.3em;
@@ -15,7 +16,8 @@ header {
 		align-items: center;
 		justify-content: space-around;
 		input {
-			height: 4vh;
+			font-family: $lato;
+			height: 3vh;
 			border-radius: 5px;
 			border: 1px solid $header-grey;
 			width: 50%;

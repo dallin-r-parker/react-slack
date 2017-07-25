@@ -5,11 +5,12 @@
 /* App Variables */
 /* App Functions */
 header {
+  font-family: "Lato", sans-serif;
   background: white;
   display: flex;
   position: fixed;
   justify-content: flex-end;
-  height: 8vh;
+  height: 6vh;
   width: 85vw;
   color: #A0A0A2;
   font-size: 1.3em;
@@ -20,7 +21,8 @@ header {
     align-items: center;
     justify-content: space-around; }
     header .right-wrap input {
-      height: 4vh;
+      font-family: "Lato", sans-serif;
+      height: 3vh;
       border-radius: 5px;
       border: 1px solid #A0A0A2;
       width: 50%;

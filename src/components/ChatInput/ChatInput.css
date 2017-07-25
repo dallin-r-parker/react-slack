@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/* App Colors */
+/* App Font */
+/* App Mixins */
+/* App Variables */
+/* App Functions */
+.chat-wrap {
+  font-family: "Lato", sans-serif;
+  border: 2px solid gray;
+  position: absolute;
+  bottom: 3vh;
+  width: 80vw;
+  height: 5vh;
+  border-radius: 5px;
+  left: calc(100vw - 82vw); }
+  .chat-wrap input {
+    font-family: "Lato", sans-serif;
+    color: gray;
+    font-size: 1.1em;
+    width: 95%;
+    height: 95%;
+    padding-left: 15px;
+    margin: 0;
+    border-width: 0;
+    border-left: 2px solid gray; }
+    .chat-wrap input:focus {
+      outline: none; }
+  .chat-wrap i {
+    color: gray;
+    padding-left: 15px;
+    width: 30px;
+    height: 100%; }
