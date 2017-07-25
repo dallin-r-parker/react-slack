@@ -5,8 +5,6 @@ import './Login.css'
 import LoginHeader from '../LoginHeader/LoginHeader'
 import LoginInput from '../LoginInput/LoginInput'
 import {addEmail, addPw, userAuthed} from '../../../redux/actions/loginActions'
-import {Redirect} from 'react-router-dom'
-import App from '../../../App'
 
 
 class Login extends Component{
