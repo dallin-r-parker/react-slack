@@ -1,0 +1,38 @@
+@import "../../styles/base.scss";
+header {
+	font-family: $lato;
+	background: white;
+	display: flex;
+	position: fixed;
+	justify-content:flex-end;
+	height: 6vh;
+	width: 88vw;
+	color: $header-grey;
+	font-size: 1.3em;
+	border-bottom: 1px solid #E8E8E8;
+	.right-wrap {
+		width: 35%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		input {
+			font-family: $lato;
+			height: 3vh;
+			border-radius: 5px;
+			border: 1px solid $header-grey;
+			width: 50%;
+			padding-left: 5px;
+			font-size: .9em;
+			&:focus{
+				outline: none;
+			}
+			&::placeholder {
+				color: #CDCECE;
+			}
+		}
+		i:hover {
+			color: $royal-blue;
+			cursor: pointer;
+		}
+	}
+}

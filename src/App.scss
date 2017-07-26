@@ -1,16 +1,19 @@
 @import "./styles/base.scss";
 
 .main-container {
+	display: flex;
 	height: 100vh;
 	width: 100%;
 	font-family:$lato;
 	.nav-container{
-		font-size: 1.2em;
+		border-right:1px solid #E8E8E8;
+		font-size: 1em;
 		display: flex;
 		flex-direction:column;
 		background: #F8F8FA;
 		color: #94979B;
-		max-width: 15vw;
+		max-width: 12vw;
+		min-width:12vw;
 		height:100%;
 		#nav-channels{
 			display: flex;
@@ -42,5 +45,9 @@
 				color: black;
 			}
 		}
+	}
+	.message-container {
+		width:calc(100vw - 15vw);
+		height: 100vh;
 	}
 }
