@@ -5,7 +5,7 @@ import './App.css'
 import Nav from './components/Nav/Nav'
 import DirectChannels from './components/DirectChannels/DirectChannels'
 import CreateChannel from './components/CreateChannel/CreateChannel'
-import Messages from './components/Messages/Messages'
+import Messages from './components/MessagesLayout/MessagesView'
 import {addChannel, getChannels, handleModal, handleChannelChange } from './redux/actions/navActions'
 
 

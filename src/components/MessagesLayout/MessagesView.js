@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import './Messages.css'
+import './MessagesView.css'
 import Header from '../Header/Header'
 import ChatInput from '../ChatInput/ChatInput'
+import Messages from './Messages'
 import io from 'socket.io-client'
 import {updateInput} from '../../redux/actions/messageActions'
-import './Messages.css'
+import './MessagesView.css'
 const socket = io()
 
 class MessagesLayout extends Component {
@@ -19,11 +20,14 @@ class MessagesLayout extends Component {
 		this.props.updateInput(value)
 	}
 
+
+
 	render() {
 		return (
 			<div className="message-wrap">
 				<Header/>
 				<div className="message-container">
+					<Messages/>
 					<h1>Hello</h1>
 					<h1>Hello</h1>
 					<h1>Hello</h1>
