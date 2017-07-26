@@ -28,26 +28,11 @@ class MessagesLayout extends Component {
 				<Header/>
 				<div className="message-container">
 					<Messages/>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
-					<h1>Hello</h1>
+					<Messages/>
+					<Messages/>
+					<Messages/>
+					<Messages/>
+					<Messages/>
 				</div>
 				<ChatInput action={this.handleChat}/>
 			</div>

@@ -1,5 +1,7 @@
 .message-wrap{
 	.message-container{
+		display: flex;
+		flex-direction: column-reverse;
 		position: absolute;
 		border: 1px solid green;
 		height:84vh;
