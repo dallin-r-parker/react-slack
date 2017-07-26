@@ -1,0 +1,12 @@
+.message-wrap{
+	.message-container{
+		position: absolute;
+		border: 1px solid green;
+		height:84vh;
+		width:85%;
+		margin-top:7vh;
+		margin-left:25px;
+		overflow-y: scroll;
+	}
+;
+}
