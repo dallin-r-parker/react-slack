@@ -4,16 +4,17 @@ const app = require('../server')
 const {hashPW, verifyPW} = require('./encrypt')
 
 exports.loginUser = (req, res, next) => {
-	req.session.user = user = {email, password} = req.body
-	return res.status(200).send(user)
-	//app.get('db').check_by_email([email]).then(user => {
-	//	console.log("Check Email: ", user)
-	//	user = user[0];
-	//	if(!user) return done(null, false)
-	//	if(verifyPW(password, user.password)) return done(null, user);
-	//	console.log('Strategy: ', user)
-	//	return done(null, false);
-	//})
+	console.log(req.body)
+	const {email} = req.body
+	app.get('db').check_by_email([email]).then(user => {
+		console.log("Check Email: ", user)
+		user = user[0];
+		console.log(user)
+		//if(!user) return done(null, false)
+		//if(verifyPW(password, user.password)) return done(null, user);
+		//console.log('Strategy: ', user)
+		//return done(null, false);
+	})
 
 }
 
