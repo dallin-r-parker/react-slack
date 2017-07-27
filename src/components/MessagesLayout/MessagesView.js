@@ -7,36 +7,34 @@ import ChatInput from './ChatInput/ChatInput'
 import Messages from './Messages'
 import './MessagesView.css'
 import {updateInput, updateMessages} from '../../redux/actions/messageActions'
+
 const socket = io()
 
 class MessagesLayout extends Component {
 	constructor(props) {
 		super(props)
-
 		this.connectUser = this.connectUser.bind(this)
 		this.handleChatMessage = this.handleChatMessage(this)
 		this.handleChatUpdate = this.handleChatUpdate.bind(this)
 		this.sendMessage = this.sendMessage.bind(this)
-
 	}
-	
-	componentDidMount(){
+
+	componentDidMount() {
 		const user = 'Kayda'
 		socket.emit('user_connected', user)
 		this.connectUser()
-
 	}
 
-	connectUser(){
+	connectUser() {
 		socket.on('user_connected', data => {
 			console.log('this user connected', data)
 		})
 	}
 
-	handleChatMessage(){
+	handleChatMessage() {
 		socket.on('chat_message', data => {
 			const time = moment().format('h:mm A')
-			const newMessage = {time: time, message:data, user: 'Dallin Parker'}
+			const newMessage = {time: time, message: data, user: 'Dallin Parker'}
 			this.props.updateMessages(newMessage)
 		})
 	}
@@ -45,14 +43,11 @@ class MessagesLayout extends Component {
 		this.props.updateInput(value)
 	}
 
-	sendMessage(e){
-		if(e === 13){
+	sendMessage(e) {
+		if (e === 13) {
 			socket.emit('chat_message', {message: this.props.message})
 		}
 	}
-
-	
-
 
 	render() {
 		const messages = this.props.messages.map((e, i) => {
