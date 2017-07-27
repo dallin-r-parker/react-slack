@@ -17,7 +17,7 @@
     background: #F8F8FA;
     color: #94979B;
     max-width: 12vw;
-    min-width: 12vw;
+    min-width: 220px;
     height: 100%; }
     .main-container .nav-container #nav-channels {
       display: flex;

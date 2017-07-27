@@ -5,10 +5,11 @@ export default function ChatInput(props) {
 
 	function handleInput(e){
 		props.update(e.target.value)
+
 	}
 
-	function sendMessage({keyCode}) {
-		props.action(keyCode)
+	function sendMessage(e) {
+		props.action(e.keyCode)
 	}
 	
 	return (

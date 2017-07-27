@@ -23,6 +23,7 @@ class MessagesLayout extends Component {
 		const user = 'Kayda'
 		socket.emit('user_connected', user)
 		this.connectUser()
+		this.sendMessage()
 	}
 
 	connectUser() {
