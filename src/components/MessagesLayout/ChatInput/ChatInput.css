@@ -9,10 +9,10 @@
   border: 2px solid gray;
   position: absolute;
   bottom: 3vh;
-  width: 80vw;
+  width: 84vw;
   height: 5vh;
   border-radius: 5px;
-  left: calc(100vw - 84vw); }
+  left: calc(100vw - 86vw); }
   .chat-wrap input {
     font-family: "Lato", sans-serif;
     color: gray;

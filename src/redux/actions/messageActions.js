@@ -4,3 +4,11 @@ export function updateInput(value){
 		payload: value
 	}
 }
+
+export function updateMessages(value){
+	return {
+		type: 'UPDATE_MESSAGES',
+		payload: value
+	}
+}
+
