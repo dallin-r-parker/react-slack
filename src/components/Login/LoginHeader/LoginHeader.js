@@ -7,6 +7,7 @@ export default function LoginHeader(props) {
 		<login className="header-main-container">
 			<img src={slackLogo} alt="slack-logo"/>
 			<div className="login-wrap">
+				<p>Register</p>
 				<p>Product</p>
 				<p>Pricing</p>
 				<p>Support</p>

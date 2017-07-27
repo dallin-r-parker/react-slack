@@ -14,8 +14,7 @@
     .dm-title p span {
       display: inline-block;
       background-color: #64D25A;
-      width: 11px;
-      height: 11px;
-      box-shadow: inset 0 0 0 2px #fff,0 0 0 2px #464646;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       margin-right: 5px; }
