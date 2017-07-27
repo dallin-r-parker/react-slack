@@ -1,0 +1,9 @@
+.register-container {
+  width: 100vw; }
+  .register-container .register-input-wrap {
+    width: 100vw;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -150px; }

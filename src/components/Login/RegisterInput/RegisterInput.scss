@@ -1,6 +1,7 @@
 @import "../../../styles/base.scss";
 
-.input-container{
+.register-input{
+	margin-top: 150px;
 	display: flex;
 	justify-content:center;
 	flex-direction:column;
@@ -13,7 +14,7 @@
 	h1{
 		color: $drk-grey;
 		font-size: 2em;
-		margin: 1em 0 .5em;
+		margin: 1em 0 0;
 	}
 	h3{
 		color: $drk-grey;
