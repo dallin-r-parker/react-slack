@@ -17,6 +17,7 @@ export default function registerReducer(state=initialState, action) {
 			return Object.assign({}, state, {email: payload})
 		case 'UPDATE_PW':
 			return Object.assign({}, state, {password: payload})
+		default:
+			return state
 	}
-	return state
 }

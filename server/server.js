@@ -11,8 +11,8 @@ const channels = ['lead', 'random', 'working', 'devTeam'];
 const app = module.exports = express();
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
-module.exports = io
 app.set('port', process.env.PORT || 5050)
+exports = io
 
 // MIDDLEWARE FOR EVERYTHING TO PASS THROUGH ================
 app.use(cors())
@@ -32,14 +32,14 @@ app.use(session({
 }));
 
 // SERVER CONTROLLERS ==================================
-const {loginUser} = require('./controllers/userCtrl')
+const {loginUser, registerUser} = require('./controllers/userCtrl')
 const {mainChannel} = require('./sockets/channelSockets')
 
 //AUTH ENDPOINTS ================================
 app.post('/api/login', loginUser)
 //app.get('/success', checkAuthed)
 //app.get('/api/current-user', loginUser)
-//app.post('/api/register', registerUser)
+app.post('/api/register', registerUser)
 
 //SOCKET-IO ENDPOINTS ================================
 io.on('connection', mainChannel)
@@ -50,9 +50,6 @@ app.get('/api/channels', (req, res, next) => {
 })
 
 // POST ENDPOINTS ======================================
-app.post('/api/register', (req, res, next) => {
-	console.log(req.body)
-})
 
 
 

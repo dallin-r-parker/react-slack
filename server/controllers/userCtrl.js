@@ -1,5 +1,8 @@
-const app = require('../server');
+const app = require('../server')
+
+
 const {hashPW, verifyPW} = require('./encrypt')
+
 exports.loginUser = (req, res, next) => {
 	req.session.user = user = {email, password} = req.body
 	return res.status(200).send(user)
@@ -14,17 +17,16 @@ exports.loginUser = (req, res, next) => {
 
 }
 
-exports.registerUser = (req, res, next) => {
+exports.registerUser = (req, res) => {
 	const db = app.get('db');
-	const { firstname, lastname, email, password } = req.body
-
+	const { first, last, email, password } = req.body.data
 	const pw = hashPW(password)
 
 	db.check_by_email([email]).then(user => {
 		if(user.length > 1) {
 			return res.status(409).send()
 		} else {
-			db.register_user([firstname, lastname, email, pw]).then(user => {
+			db.register_user([first, last, email, pw]).then(user => {
 				if (!user) return res.status(404).send("User Not Found")
 				return res.status(200).send('Account Created')
 			})
