@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import axios from 'axios'
 import LoginHeader from '../LoginHeader/LoginHeader'
 import RegisterInput from '../RegisterInput/RegisterInput'
 import {updateFirst, updateLast, updateEmail, updatePW} from '../../../redux/actions/registerActions'
@@ -15,29 +16,32 @@ class Register extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this)
 		console.log("constructor: ",props)
 	}
+	componentDidMount(){
+		this.handleSubmit()
+	}
 
 	handleFirst(value) {
-		console.log('First2: ', value)
 		this.props.updateFirst(value)
 	}
 
 	handleLast(value) {
-		console.log('Last2: ', value)
 		this.props.updateLast(value)
 	}
 
 	handleEmail(value) {
-		console.log('Email2: ', value)
 		this.props.updateEmail(value)
 	}
 
 	handlePw(value) {
-		console.log('PW2: ', value)
 		this.props.updatePW(value)
 	}
 
 	handleSubmit() {
-		console.log()
+		const {first, last, email, password} = this.props
+		const newUser = Object.assign({}, {first, last, email, password})
+
+		
+		console.log(newUser)
 	}
 
 	render() {
@@ -57,8 +61,7 @@ class Register extends Component {
 	}
 }
 
-function mapStateToProps({registerReducer}) {
-	console.log("mapSTate: ", registerReducer)
+function mapStateToProps({registerReducer, loginReducer}) {
 	return{
 		first: registerReducer.first,
 		last: registerReducer.last,

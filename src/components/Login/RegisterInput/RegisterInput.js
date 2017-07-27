@@ -19,7 +19,8 @@ export default function RegisterInput(props) {
 		props.password(e.target.value)
 	}
 
-	function handleSubmit() {
+	function handleSubmit(e) {
+		props.submit(e)
 	}
 
 	return (
@@ -33,6 +34,7 @@ export default function RegisterInput(props) {
 			<input placeholder="email"
 			       onChange={handleEmail}/>
 			<input placeholder="password"
+			       type="password"
 			       onChange={handlePw}/>
 			<button onClick={handleSubmit}>Submit</button>
 			<button><Link to="/">Cancel</Link></button>
