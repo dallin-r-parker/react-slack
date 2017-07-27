@@ -49,8 +49,9 @@ app.get('/api/channels', (req, res, next) => {
 	res.status(200).send(channels)
 })
 
-// GET ENDPOINTS ======================================
-app.post('/api/addchannels', (req, res, next) => {
+// POST ENDPOINTS ======================================
+app.post('/api/register', (req, res, next) => {
+	console.log(req.body)
 })
 
 

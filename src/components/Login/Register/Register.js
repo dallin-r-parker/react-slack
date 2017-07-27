@@ -16,9 +16,6 @@ class Register extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this)
 		console.log("constructor: ",props)
 	}
-	componentDidMount(){
-		this.handleSubmit()
-	}
 
 	handleFirst(value) {
 		this.props.updateFirst(value)
@@ -40,8 +37,9 @@ class Register extends Component {
 		const {first, last, email, password} = this.props
 		const newUser = Object.assign({}, {first, last, email, password})
 
-		
-		console.log(newUser)
+		axios.post('/api/register', {data: newUser})
+			.then(res => console.log("res: ", res))
+			.catch(err => console.log("err: ", err))
 	}
 
 	render() {
