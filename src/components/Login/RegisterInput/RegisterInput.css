@@ -18,7 +18,7 @@
   .register-input h1 {
     color: #555459;
     font-size: 2em;
-    margin: 1em 0 .5em; }
+    margin: 1em 0 0; }
   .register-input h3 {
     color: #555459;
     font-weight: lighter;
@@ -45,3 +45,11 @@
     font-weight: bold;
     margin-bottom: 20px;
     cursor: pointer; }
+    .register-input button a {
+      text-decoration: none; }
+      .register-input button a:link {
+        color: white; }
+      .register-input button a:visited {
+        color: white; }
+      .register-input button a:active {
+        color: white; }
