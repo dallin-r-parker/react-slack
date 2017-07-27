@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './LoginInput.css'
 
 
@@ -29,6 +30,7 @@ export default function LoginInput(props) {
 				       placeholder="password"/>
 
 				<button onClick={handleLogin}>Continue</button>
+			<button><Link to="/register">Register</Link></button>
 		</section>
 	)
 }
