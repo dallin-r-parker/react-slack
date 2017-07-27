@@ -4,7 +4,7 @@ import './RegisterInput.css'
 export default function RegisterInput(props) {
 
 	return(
-		<section className="register-container">
+		<section className="register-input">
 			<h1>Sign Up</h1>
 			<h3>Enter in applicable information</h3>
 			<input type="text" placeholder="first name"/>

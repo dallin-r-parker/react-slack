@@ -1,0 +1,49 @@
+@import "../../../styles/base.scss";
+
+.register-input{
+	margin-top: 150px;
+	display: flex;
+	justify-content:center;
+	flex-direction:column;
+	align-items:center;
+	width: calc(100vw - 65%);
+	background-color: #fff;
+	border-radius: .25rem;
+	box-shadow: 0 1px 0 rgba(0,0,0,.25);
+	border: 1px solid #E8E8E8;
+	h1{
+		color: $drk-grey;
+		font-size: 2em;
+		margin: 1em 0 .5em;
+	}
+	h3{
+		color: $drk-grey;
+		font-weight:lighter;
+		font-size:1em;
+	}
+	input {
+		font-size:1.1em;
+		min-width: 50%;
+		padding: 15px;
+		border-radius: 5px;
+		border: 1px solid lightgray;
+		margin-bottom:15px;
+		&:focus{
+			outline: $royal-blue;
+			border:1px solid $royal-blue;
+		}
+	}
+	button{
+		width: 56%;
+		padding: 15px;
+		outline: none;
+		border: none;
+		font-size:1.1em;
+		background: $create-green;
+		border-radius: 5px;
+		color:white;
+		font-weight:bold;
+		margin-bottom: 20px;
+		cursor: pointer;
+	}
+}

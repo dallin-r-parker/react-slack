@@ -10,7 +10,7 @@ export  default class Register extends Component{
 
 	render(){
 		return(
-			<div>
+			<div className="register-container">
 				<LoginHeader/>
 				<div className="register-input-wrap">
 					<RegisterInput/>

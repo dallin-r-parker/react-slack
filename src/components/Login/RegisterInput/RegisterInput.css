@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/* App Colors */
+/* App Font */
+/* App Mixins */
+/* App Variables */
+/* App Functions */
+.register-input {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100vw - 65%);
+  background-color: #fff;
+  border-radius: .25rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #E8E8E8; }
+  .register-input h1 {
+    color: #555459;
+    font-size: 2em;
+    margin: 1em 0 .5em; }
+  .register-input h3 {
+    color: #555459;
+    font-weight: lighter;
+    font-size: 1em; }
+  .register-input input {
+    font-size: 1.1em;
+    min-width: 50%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    margin-bottom: 15px; }
+    .register-input input:focus {
+      outline: #2780F8;
+      border: 1px solid #2780F8; }
+  .register-input button {
+    width: 56%;
+    padding: 15px;
+    outline: none;
+    border: none;
+    font-size: 1.1em;
+    background: #2AB27B;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer; }
