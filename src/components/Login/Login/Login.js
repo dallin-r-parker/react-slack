@@ -29,8 +29,10 @@ class Login extends Component{
 		const {email, password} = this.props
 		const user = Object.assign({}, {email, password})
 
-		axios.post('/api/login',{data: user})
-			.then(res => this.props.userAuthed(res.data))
+		axios.post('/api/login', user)
+			.then(res => {
+				if(res.status === 200) return this.props.userAuthed(res.data)
+			})
 			.catch(err => console.log(err))
 	}
 
