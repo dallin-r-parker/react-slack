@@ -3,28 +3,26 @@ import './RegisterInput.css'
 import {Link} from 'react-router-dom'
 
 export default function RegisterInput(props) {
-	console.log(props)
 	function handleFirst(e) {
 		props.first(e.target.value)
 	}
-	
+
 	function handleLast(e) {
 		props.last(e.target.value)
 	}
-	
-	function handleEmail(e){
+
+	function handleEmail(e) {
 		props.email(e.target.value)
 	}
-	
-	function handlePw(e){
+
+	function handlePw(e) {
 		props.password(e.target.value)
 	}
-	
+
 	function handleSubmit() {
-		
 	}
 
-	return(
+	return (
 		<section className="register-input">
 			<h1>Sign Up</h1>
 			<h3>Enter in your information</h3>

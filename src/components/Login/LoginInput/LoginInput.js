@@ -19,7 +19,7 @@ export default function LoginInput(props) {
 	return(
 		<section className="input-container">
 			<h1>Sign in to your team</h1>
-			<h3>Enter your username & password</h3>
+			<h3>Enter your email & password</h3>
 				<input onChange={handleEmail}
 				       type="email"
 				       placeholder="email"/>
