@@ -1,0 +1,23 @@
+import React from 'react'
+import './ChatInput.css'
+
+export default function ChatInput(props) {
+
+	function handleInput(e){
+		props.update(e.target.value)
+	}
+
+	function sendMessage({keyCode}) {
+		props.action(keyCode)
+	}
+	
+	return (
+			<div className="chat-wrap">
+				<i className="fa fa-plus" aria-hidden="true">{/* */}</i>
+				<input type="text" 
+				       onChange={handleInput}
+				       onKeyDown={sendMessage}
+				       placeholder="type here..."/>
+			</div>
+	)
+}

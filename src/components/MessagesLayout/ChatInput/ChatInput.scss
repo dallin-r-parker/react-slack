@@ -1,14 +1,14 @@
-@import "../../styles/base.scss";
+@import "../../../styles/base.scss";
 
 	.chat-wrap {
-		font-family:$lato;
+		font-family: $lato;
 		border: 2px solid gray;
 		position: absolute;
 		bottom: 3vh;
-		width: 80vw;
+		width: 84vw;
 		height: 5vh;
 		border-radius: 5px;
-		left: calc(100vw - 85vw);
+		left: calc(100vw - 86vw);
 		input {
 			font-family: $lato;
 			color: gray;

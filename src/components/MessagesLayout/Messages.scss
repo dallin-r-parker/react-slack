@@ -1,0 +1,21 @@
+.message-content{
+	width: 100%;
+	display: flex;
+	font-size: 1em;
+	align-items:center;
+	&:hover{
+		background: whitesmoke;
+		cursor: default;
+	}
+	p{
+		margin-right: 10px;
+	}
+	p:nth-child(1){
+		color: gray;
+		font-size:.7em;
+	}
+	p:nth-child(2){
+		color: #31DA6E;
+		font-weight:bold;
+	}
+}
