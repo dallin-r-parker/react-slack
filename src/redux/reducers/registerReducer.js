@@ -2,7 +2,8 @@ const initialState = {
 	first: '',
 	last: '',
 	email: '',
-	password: ''
+	password: '',
+	created: false
 }
 
 export default function registerReducer(state=initialState, action) {
@@ -17,6 +18,8 @@ export default function registerReducer(state=initialState, action) {
 			return Object.assign({}, state, {email: payload})
 		case 'UPDATE_PW':
 			return Object.assign({}, state, {password: payload})
+		case 'ACCOUNT_CREATED':
+			return Object.assign({}, state, {created: payload})
 		default:
 			return state
 	}

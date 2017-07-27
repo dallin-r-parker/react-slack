@@ -25,3 +25,10 @@ export function updatePW(value) {
 		payload: value
 	}
 }
+
+export function updateAccount(value) {
+	return{
+		type: 'ACCOUNT_CREATED',
+		payload: value
+	}
+}

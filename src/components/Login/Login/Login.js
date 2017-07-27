@@ -5,6 +5,7 @@ import './Login.css'
 import LoginHeader from '../LoginHeader/LoginHeader'
 import LoginInput from '../LoginInput/LoginInput'
 import {addEmail, addPw, userAuthed} from '../../../redux/actions/loginActions'
+import {updateAccount} from '../../../redux/actions/registerActions'
 
 
 class Login extends Component{
@@ -14,6 +15,10 @@ class Login extends Component{
 		this.handleEmail = this.handleEmail.bind(this)
 		this.handlePassword = this.handlePassword.bind(this)
 		this.handleLogin = this.handleLogin.bind(this)
+	}
+
+	componentDidMount(){
+		this.props.updateAccount(false)
 	}
 
 	handleEmail = (e) => (this.props.addEmail(e))
@@ -43,12 +48,13 @@ class Login extends Component{
 	}
 }
 
-function mapStateToProps({loginReducer}) {
+function mapStateToProps({loginReducer, registerReducer}) {
 	return {
 		email: loginReducer.email,
 		password: loginReducer.password,
-		authed: loginReducer.authed
+		authed: loginReducer.authed,
+		created: registerReducer.created
 	}
 }
 
-export default connect(mapStateToProps, {addEmail, addPw, userAuthed})(Login)
+export default connect(mapStateToProps, {addEmail, addPw, userAuthed, updateAccount})(Login)

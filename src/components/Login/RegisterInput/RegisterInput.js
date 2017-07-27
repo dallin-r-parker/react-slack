@@ -19,8 +19,8 @@ export default function RegisterInput(props) {
 		props.password(e.target.value)
 	}
 
-	function handleSubmit(e) {
-		props.submit(e)
+	function handleSubmit() {
+		props.submit()
 	}
 
 	return (

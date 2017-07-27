@@ -19,7 +19,7 @@ exports.loginUser = (req, res, next) => {
 
 exports.registerUser = (req, res) => {
 	const db = app.get('db');
-	const { first, last, email, password } = req.body.data
+	const { first, last, email, password } = req.body
 	const pw = hashPW(password)
 
 	db.check_by_email([email]).then(user => {
