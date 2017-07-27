@@ -14,10 +14,10 @@ const io = require('socket.io')(http)
 app.set('port', process.env.PORT || 5050)
 
 // MIDDLEWARE FOR EVERYTHING TO PASS THROUGH ================
-const {corsHeaders} = require('./middleware/middleware')
+//const {corsHeaders} = require('./middleware/middleware')
 app.use(cors())
 app.use(bodyParser.json())
-app.use(corsHeaders)
+//app.use(corsHeaders)
 
 // MASSIVE DB ==========================================
 massive(process.env.DB_CONNECTION)
@@ -41,7 +41,13 @@ app.post('/api/login', loginUser)
 //app.post('/api/register', registerUser)
 
 //SOCKET-IO ENDPOINTS ================================
-io.on('connection', (socket) => console.log('User connected'))
+io.on('connection', (socket) => {
+	console.log('user connected')
+	socket.on('chat_message', data => socket.emit('chat_message', data))
+})
+
+
+
 app.get('/channel/message', (req, res) => {
 	res.send('<h1>Hello world</h1>')
 })

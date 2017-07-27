@@ -4,7 +4,11 @@ import './ChatInput.css'
 export default function ChatInput(props) {
 
 	function handleInput(e){
-		props.action(e.target.value)
+		props.update(e.target.value)
+	}
+
+	function sendMessage({keyCode}) {
+		props.action(keyCode)
 	}
 	
 	return (
@@ -12,6 +16,7 @@ export default function ChatInput(props) {
 				<i className="fa fa-plus" aria-hidden="true">{/* */}</i>
 				<input type="text" 
 				       onChange={handleInput}
+				       onKeyDown={sendMessage}
 				       placeholder="type here..."/>
 			</div>
 	)
