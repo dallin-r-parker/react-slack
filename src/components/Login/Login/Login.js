@@ -10,7 +10,7 @@ import {updateAccount} from '../../../redux/actions/registerActions'
 class Login extends Component {
 	constructor(props) {
 		super(props)
-		
+
 		this.handleEmail = this.handleEmail.bind(this)
 		this.handlePassword = this.handlePassword.bind(this)
 		this.handleLogin = this.handleLogin.bind(this)
@@ -28,7 +28,8 @@ class Login extends Component {
 		const user = Object.assign({}, {email, password})
 		axios.post('/api/login', user)
 			.then(res => {
-				if (res.status === 200) return this.props.userAuthed(res.data)
+				console.log(res)
+				//if (res.status === 200) return this.props.userAuthed(res.data)
 			})
 			.catch(err => (console.log("err", err)))
 	}
@@ -48,13 +49,20 @@ class Login extends Component {
 	}
 }
 
-function mapStateToProps({loginReducer, registerReducer}) {
+function mapStateToProps({loginReducer, registerReducer, messageReducer}) {
 	return {
 		email: loginReducer.email,
 		password: loginReducer.password,
 		authed: loginReducer.authed,
-		created: registerReducer.created
+		created: registerReducer.created,
+		currentUser: messageReducer.currentUser,
+		userId: messageReducer.userId
 	}
 }
 
-export default connect(mapStateToProps, {addEmail, addPw, userAuthed, updateAccount})(Login)
+function mapActionsToProps() {
+	
+}
+
+export default connect(mapStateToProps,
+	{addEmail, addPw, userAuthed, updateAccount})(Login)
