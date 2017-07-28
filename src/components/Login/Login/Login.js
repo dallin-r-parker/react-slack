@@ -6,13 +6,11 @@ import LoginHeader from '../LoginHeader/LoginHeader'
 import LoginInput from '../LoginInput/LoginInput'
 import {addEmail, addPw, userAuthed} from '../../../redux/actions/loginActions'
 import {updateAccount} from '../../../redux/actions/registerActions'
-const invalid = true;
+
 class Login extends Component {
 	constructor(props) {
 		super(props)
-		this.state = {
-			invalid: null
-		}
+		
 		this.handleEmail = this.handleEmail.bind(this)
 		this.handlePassword = this.handlePassword.bind(this)
 		this.handleLogin = this.handleLogin.bind(this)
@@ -24,7 +22,6 @@ class Login extends Component {
 
 	handleEmail = (e) => (this.props.addEmail(e))
 	handlePassword = (e) => (this.props.addPw(e))
-	handleInvalid = () => (invalid)
 
 	handleLogin() {
 		const {email, password} = this.props
