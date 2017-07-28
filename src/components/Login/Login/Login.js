@@ -6,38 +6,39 @@ import LoginHeader from '../LoginHeader/LoginHeader'
 import LoginInput from '../LoginInput/LoginInput'
 import {addEmail, addPw, userAuthed} from '../../../redux/actions/loginActions'
 import {updateAccount} from '../../../redux/actions/registerActions'
-
-
-class Login extends Component{
-	constructor(props){
+const invalid = true;
+class Login extends Component {
+	constructor(props) {
 		super(props)
-
+		this.state = {
+			invalid: null
+		}
 		this.handleEmail = this.handleEmail.bind(this)
 		this.handlePassword = this.handlePassword.bind(this)
 		this.handleLogin = this.handleLogin.bind(this)
 	}
 
-	componentDidMount(){
-		this.props.updateAccount(false)
+	componentDidMount() {
+		console.log(this.props)
 	}
 
 	handleEmail = (e) => (this.props.addEmail(e))
-
 	handlePassword = (e) => (this.props.addPw(e))
+	handleInvalid = () => (invalid)
 
 	handleLogin() {
 		const {email, password} = this.props
 		const user = Object.assign({}, {email, password})
-
 		axios.post('/api/login', user)
 			.then(res => {
-				if(res.status === 200) return this.props.userAuthed(res.data)
+				if (res.status === 200) return this.props.userAuthed(res.data)
 			})
-			.catch(err => console.log(err))
+			.catch(err => (console.log("err", err)))
 	}
 
-	render(){
-		return(
+
+	render() {
+		return (
 			<section className="login-main-container">
 				<LoginHeader/>
 				<div className="input-component-wrap">
