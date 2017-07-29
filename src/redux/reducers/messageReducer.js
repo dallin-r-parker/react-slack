@@ -13,6 +13,10 @@ export default function messageReducer(state=initialState, action) {
 			return Object.assign({}, state, {message: payload})
 		case 'UPDATE_MESSAGES':
 			return Object.assign({}, state, {messages: [...state.messages, payload]})
+		case 'UPDATE_USERID':
+			return Object.assign({}, state, {userId: payload})
+		case 'UPDATE_CURRENT_USER':
+			return Object.assign({}, state, {currentUser: `${payload.firstname} ${payload.lastname}`})
 		default:
 			return state
 	}

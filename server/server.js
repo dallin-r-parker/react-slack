@@ -6,7 +6,6 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const channels = ['lead', 'random', 'working', 'devTeam'];
 
-
 // INITIATE EXPRESS APP/SOCKETS & SET LISTENING PORT ================
 const app = module.exports = express();
 const http = require('http').Server(app)
@@ -17,7 +16,6 @@ exports = io
 // MIDDLEWARE FOR EVERYTHING TO PASS THROUGH ================
 app.use(cors())
 app.use(bodyParser.json())
-
 
 // MASSIVE DB ==========================================
 massive(process.env.DB_CONNECTION)
@@ -33,12 +31,11 @@ app.use(session({
 
 // SERVER CONTROLLERS ==================================
 const {loginUser, registerUser} = require('./controllers/userCtrl')
+const {giphyGet} = require('./controllers/giphyCtrl')
 const {mainChannel} = require('./sockets/channelSockets')
 
 //AUTH ENDPOINTS ================================
 app.post('/api/login', loginUser)
-//app.get('/success', checkAuthed)
-//app.get('/api/current-user', loginUser)
 app.post('/api/register', registerUser)
 
 //SOCKET-IO ENDPOINTS ================================
@@ -48,10 +45,10 @@ io.on('connection', mainChannel)
 app.get('/api/channels', (req, res, next) => {
 	res.status(200).send(channels)
 })
+// GIPHY ENDPOINTS =====================================
+app.get('/api/giphy', giphyGet)
 
 // POST ENDPOINTS ======================================
-
-
 
 http.listen(app.get('port'), () => {
 	console.log('listening on: ', app.get('port'))

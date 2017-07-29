@@ -7,7 +7,6 @@ exports.loginUser = (req, res, next) => {
 	const {email, password} = req.body
 
 	app.get('db').check_by_email([email]).then(user => {
-		console.log(user)
 		console.log(user.length === 0)
 		if(user.length === 0) return res.status(404).send("Not Found")
 		user = user[0]

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import axios from 'axios'
 import './Login.css'
 import LoginHeader from '../LoginHeader/LoginHeader'
 import LoginInput from '../LoginInput/LoginInput'
@@ -16,22 +15,13 @@ class Login extends Component {
 		this.handleLogin = this.handleLogin.bind(this)
 	}
 
-	componentDidMount() {
-		console.log(this.props)
-	}
-
 	handleEmail = (e) => (this.props.addEmail(e))
 	handlePassword = (e) => (this.props.addPw(e))
 
 	handleLogin() {
 		const {email, password} = this.props
 		const user = Object.assign({}, {email, password})
-		axios.post('/api/login', user)
-			.then(res => {
-				console.log(res)
-				//if (res.status === 200) return this.props.userAuthed(res.data)
-			})
-			.catch(err => (console.log("err", err)))
+		this.props.userAuthed(user)
 	}
 
 
@@ -49,19 +39,13 @@ class Login extends Component {
 	}
 }
 
-function mapStateToProps({loginReducer, registerReducer, messageReducer}) {
+function mapStateToProps({loginReducer, registerReducer}) {
 	return {
 		email: loginReducer.email,
 		password: loginReducer.password,
 		authed: loginReducer.authed,
-		created: registerReducer.created,
-		currentUser: messageReducer.currentUser,
-		userId: messageReducer.userId
+		created: registerReducer.created
 	}
-}
-
-function mapActionsToProps() {
-	
 }
 
 export default connect(mapStateToProps,
