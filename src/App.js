@@ -33,12 +33,6 @@ class App extends Component {
   handleOpenModal = () => this.props.handleModal(true);
   handleCloseModal = () => this.props.handleModal(false);
 
-  //componentDidMount() {
-  //	console.log("first",this.props.channels)
-  //	this.props.getChannels()
-  //	console.log("second", this.props.channels)
-  //}
-
   render() {
     const navChannels = this.props.channels.map((channel, i) =>
       <Nav key={i} channels={channel} />

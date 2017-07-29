@@ -2,11 +2,10 @@ import axios from 'axios';
 
 export function getChannels() {
   return function(dispatch) {
-    axios.get('/api/channels').then(res => {
-      console.log('GetAll', res.data);
+    axios.get('/api/all-channels').then(({ data }) => {
       dispatch({
         type: 'GET_CHANNELS',
-        payload: res.data[0]
+        payload: data
       });
     });
   };
@@ -23,7 +22,6 @@ export function addChannel(value) {
   return function(dispatch) {
     axios.post('/api/channel', value).then(res => {
       const channelName = res.data.map(e => e.channel_name);
-
       dispatch({
         type: 'ADD_CHANNEL',
         payload: channelName

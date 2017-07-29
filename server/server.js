@@ -43,13 +43,16 @@ app.post('/api/register', registerUser)
 io.on('connection', mainChannel)
 
 // GET ENDPOINTS ======================================
-app.get('/api/channels', getAll)
+app.get('/api/all-channels', getAll)
 
 // GIPHY ENDPOINTS =====================================
 app.get('/api/giphy', giphyGet)
 
 // POST ENDPOINTS ======================================
 app.post('/api/channel', addChannel)
+
+
+
 http.listen(app.get('port'), () => {
 	console.log('listening on: ', app.get('port'))
 })
