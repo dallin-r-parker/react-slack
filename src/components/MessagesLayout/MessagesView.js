@@ -33,7 +33,11 @@ class MessagesLayout extends Component {
   handleChatMessage() {
     socket.on('chat_message', data => {
       const time = moment().format('h:mm A');
-      const newMessage = { time: time, message: data, user: 'Dallin Parker' };
+      const newMessage = {
+        time: time,
+        message: data,
+        user: this.props.currentUser
+      };
       this.props.updateMessages(newMessage);
     });
   }
