@@ -4,6 +4,7 @@ import './LoginInput.css'
 
 
 export default function LoginInput(props) {
+	
 
 	function handleEmail(e) {
 		props.email(e.target.value)
@@ -22,10 +23,12 @@ export default function LoginInput(props) {
 			<h1>Sign in to your team</h1>
 			<h3>Enter your email & password</h3>
 				<input onChange={handleEmail}
+				       //style={{border: invalid ? '1px solid rgb(239, 57, 0)' : null}}
 				       type="email"
 				       placeholder="email"/>
 
 				<input onChange={handlePw}
+				       //style={{border: invalid ? '1px solid rgb(239, 57, 0)' : null}}
 				       type="password"
 				       placeholder="password"/>
 
