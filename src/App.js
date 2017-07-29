@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import axios from 'axios'
 import './App.css'
 import Nav from './components/Nav/Nav'
 import DirectChannels from './components/DirectChannels/DirectChannels'
@@ -20,26 +19,21 @@ class App extends Component {
 	}
 
 	handleAddChannel() {
-		this.props.addChannel(this.props.newChannel)
+		console.log(this.props)
+		const {newChannel, userId} = this.props
+		const channel = Object.assign({}, {channels: newChannel, id: userId})
+		console.log('addChannel: ', channel)
+		this.props.addChannel(channel)
 		this.handleCloseModal()
 	}
 
 	handleChange = (e) => (this.props.handleChannelChange(e))
-
-	handleOpenModal() {
-		let value = true
-		this.props.handleModal(value)
-	}
-
-	handleCloseModal() {
-		let value = false
-		this.props.handleModal(value)
-	}
+	handleOpenModal = () => (this.props.handleModal(true))
+	handleCloseModal = () => (this.props.handleModal(false))
 
 	componentDidMount() {
-		axios.get('/api/channels')
-			.then(res => this.props.getChannels(res.data))
-			.catch(err => console.log(err))
+		//TODO: WHEN THERE IS AN ARRAY OF CHANNELS MAKE IT NOT CALL THIS GETCHANNELS
+		this.props.getChannels()
 	}
 
 	render() {
@@ -77,12 +71,14 @@ class App extends Component {
 		)
 	}
 }
-function mapStateToProps({navReducer}) {
+function mapStateToProps({navReducer, messageReducer}) {
+	
 	return {
 		channels: navReducer.channels,
 		directChannels: navReducer.directChannels,
 		showModal: navReducer.showModal,
-		newChannel: navReducer.newChannel
+		newChannel: navReducer.newChannel,
+		userId: messageReducer.userId
 	}
 }
 export default connect(mapStateToProps, {addChannel, getChannels, handleModal, handleChannelChange})(App)

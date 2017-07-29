@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {updateCurrentUser, updateUserId} from './messageActions'
+import {getChannels} from './navActions'
 
 export function addEmail(value) {
 	return {
@@ -28,6 +29,7 @@ export function userAuthed(user) {
 
 				dispatch(updateCurrentUser(currUser))
 				dispatch(updateUserId(user_id))
+				dispatch(getChannels())
 			})
 			.then(err => console.log(err))
 	}

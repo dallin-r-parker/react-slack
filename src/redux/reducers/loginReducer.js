@@ -1,6 +1,6 @@
 const initialState = {
-	email: '',
-	password: '',
+	email: 'test@test.com',
+	password: 'test',
 	authed: false
 }
 
