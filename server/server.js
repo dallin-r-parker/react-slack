@@ -31,6 +31,7 @@ app.use(session({
 
 // SERVER CONTROLLERS ==================================
 const {loginUser, registerUser} = require('./controllers/userCtrl')
+const {getAll, addChannel} = require('./controllers/channelCtrl')
 const {giphyGet} = require('./controllers/giphyCtrl')
 const {mainChannel} = require('./sockets/channelSockets')
 
@@ -42,13 +43,15 @@ app.post('/api/register', registerUser)
 io.on('connection', mainChannel)
 
 // GET ENDPOINTS ======================================
-app.get('/api/channels', (req, res, next) => {
-	res.status(200).send(channels)
-})
+app.get('/api/all-channels', getAll)
+
 // GIPHY ENDPOINTS =====================================
 app.get('/api/giphy', giphyGet)
 
 // POST ENDPOINTS ======================================
+app.post('/api/channel', addChannel)
+
+
 
 http.listen(app.get('port'), () => {
 	console.log('listening on: ', app.get('port'))

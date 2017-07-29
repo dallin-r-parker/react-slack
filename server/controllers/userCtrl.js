@@ -7,7 +7,6 @@ exports.loginUser = (req, res, next) => {
 	const {email, password} = req.body
 
 	app.get('db').check_by_email([email]).then(user => {
-		console.log(user.length === 0)
 		if(user.length === 0) return res.status(404).send("Not Found")
 		user = user[0]
 		if(verifyPW(password, user.password)){
@@ -20,7 +19,7 @@ exports.loginUser = (req, res, next) => {
 }
 
 exports.registerUser = (req, res) => {
-	const db = app.get('db');
+	const db = app.get('db')
 	const { first, last, email, password } = req.body
 	const pw = hashPW(password)
 
