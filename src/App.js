@@ -19,10 +19,8 @@ class App extends Component {
 	}
 
 	handleAddChannel() {
-		console.log(this.props)
 		const {newChannel, userId} = this.props
 		const channel = Object.assign({}, {channels: newChannel, id: userId})
-		console.log('addChannel: ', channel)
 		this.props.addChannel(channel)
 		this.handleCloseModal()
 	}
@@ -32,8 +30,9 @@ class App extends Component {
 	handleCloseModal = () => (this.props.handleModal(false))
 
 	componentDidMount() {
-		//TODO: WHEN THERE IS AN ARRAY OF CHANNELS MAKE IT NOT CALL THIS GETCHANNELS
+		console.log("first",this.props.channels)
 		this.props.getChannels()
+		console.log("second", this.props.channels)
 	}
 
 	render() {

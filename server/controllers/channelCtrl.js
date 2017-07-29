@@ -1,21 +1,20 @@
 const app = require('../server')
 
-
-exports.getAll = (req, res, next) => {
+exports.getAll = (req, res) => {
 	const db = app.get('db')
-	const{user_id} = req.session.user
-	console.log(user_id)
-	db.all_channels([user_id]).then(channels => {
-		console.log(res)
-		res.send(channels)
+	const {user_id} = req.session.user
+	db.all_channels([user_id]).then(res => {
+		let channels = res.map(e => (e.channel_name))
+		res.status(200).send(channels)
 	})
 		.catch(err => res.status(404).send(err))
 }
-
-exports.addChannel = (req, res, next) => {
+exports.addChannel = (req, res) => {
 	const db = app.get('db')
 	const {channels, id} = req.body
 	db.add_channel([id, channels]).then(channel => {
-		console.log("add: ", channel)
+		if (channel.length < 1) return res.status(404).send()
+		res.status(200).send(channel)
 	})
+		.catch(err => res.status(404).send())
 }
