@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Login from '../../components/Login/Login/Login'
 
 export function getChannels(channels) {
 	return function (dispatch) {
@@ -21,15 +22,14 @@ export function handleChannelChange(value) {
 }
 
 export function addChannel(value) {
-	console.log("val", value)
 	return function (dispatch) {
 		axios.post('/api/channel', value)
 			.then(res => {
-				console.log("res", res)
-				const {channel_name} = res.data
+				const channelName = res.data.map(e => (e.channel_name))
+
 				dispatch({
 					type: 'ADD_CHANNEL',
-					payload: channel_name
+					payload: channelName
 				})
 			})
 	}
