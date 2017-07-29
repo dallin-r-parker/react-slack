@@ -20,15 +20,11 @@ class MessagesLayout extends Component {
 	}
 
 	componentDidMount() {
-		const user = 'Kayda'
-		socket.emit('user_connected', user)
 		this.connectUser()
 	}
 
 	connectUser() {
-		socket.on('user_connected', data => {
-			console.log('this user connected', data)
-		})
+		socket.on('user_connected', this.props.currentUser)
 	}
 
 	handleChatMessage() {
@@ -73,7 +69,9 @@ function mapStateToProps({messageReducer}) {
 	console.log(messageReducer)
 	return {
 		message: messageReducer.message,
-		messages: messageReducer.messages
+		messages: messageReducer.messages,
+		currentUser: messageReducer.currentUser,
+		userId: messageReducer.userId
 	}
 }
 
