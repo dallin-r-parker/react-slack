@@ -14,14 +14,14 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 * [Redux](http://redux.js.org/) - Project state management.
 * [Node](https://nodejs.org/en/) - Backend API.
 * [Redux-Thunk](https://github.com/gaearon/redux-thunk) - 
-* [Axios](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Axios](https://github.com/mzabriskie/axios) - Promise based HTTP client
 * [Massive.js](https://github.com/dmfay/massive-js) - Data-mapper for Node.js to Postgres
 * [Bcrypt](https://www.npmjs.com/package/bcrypt) - Hash and salt passwords
 
 
-## Authors
+## Author - Dallin Parker
 
-* **Dallin Parker** - (http://dallinparker.me) - Portfolio Site
+ #### (http://dallinparker.me) - Portfolio Site
 
 ## License
 
