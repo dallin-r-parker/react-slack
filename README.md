@@ -1,87 +1,29 @@
 # Slack - React
 
-Clone of popular chat application Slack. Leveraged socket.io library to get realtime chat conversations between users. Built with React and Redux libraries as frontend view/state managment. Node.js backend with express.js framework. Implimented redux-thunk as middleware to make asynchronous http requests and dispatch multiple action creaters at once. Made SQL queries to Postgres DB with massivjs data-mapping library.
+Clone of popular chat application Slack. Leveraged **socket.io** library to get realtime chat conversations between users. Built with **React and Redux** libraries as frontend view/state management. **Node.js** backend with **express.js** framework. Implemented **redux-thunk** as middleware to make asynchronous HTTP requests and dispatch multiple action creators at once. Add **GiphyAPI** to add additional functionality and slack similarities. Made SQL queries to **Postgres DB with massivjs data-mapping library**.
 
-## Getting Started
+# Video Walk through of site
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [React](https://facebook.github.io/react/) - Frontend view library
+* [Redux](http://redux.js.org/) - Project state management.
+* [Node](https://nodejs.org/en/) - Backend API.
+* [Redux-Thunk](https://github.com/gaearon/redux-thunk) - 
+* [Axios](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Massive.js](https://github.com/dmfay/massive-js) - Data-mapper for Node.js to Postgres
+* [Bcrypt](https://www.npmjs.com/package/bcrypt) - Hash and salt passwords
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Dallin Parker** - (http://dallinparker.me) - Portfolio Site
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
