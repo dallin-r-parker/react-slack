@@ -21,6 +21,12 @@
   min-width: 220px;
   height: 100%;
 }
+.main-container .nav-container video {
+  position: absolute;
+  border: 1px solid black;
+  top: 7vh;
+  left: 38vh;
+}
 .main-container .nav-container .login-user {
   display: flex;
   justify-content: space-around;

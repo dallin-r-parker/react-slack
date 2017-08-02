@@ -15,6 +15,12 @@
 		max-width: 12vw;
 		min-width: 220px;
 		height:100%;
+		video{
+			position: absolute;
+			border: 1px solid black;
+			top: 7vh;
+			left: 38vh;
+		}
 		.login-user{
 			display: flex;
 			justify-content: space-around;
