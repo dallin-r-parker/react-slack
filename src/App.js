@@ -20,6 +20,7 @@ class App extends Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleProfileImg = this.handleProfileImg.bind(this);
   }
 
   handleAddChannel() {
@@ -32,6 +33,18 @@ class App extends Component {
   handleChange = e => this.props.handleChannelChange(e);
   handleOpenModal = () => this.props.handleModal(true);
   handleCloseModal = () => this.props.handleModal(false);
+
+  handleProfileImg = () => {
+    const constraints = { audio: false, video: { width: 1280, height: 720 } };
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then(mediaStream => {
+        const video = document.querySelector('video');
+        video.srcObject = mediaStream;
+        video.onloadedmetadata = e => video.play();
+      })
+      .catch(err => console.log(`${err.name}: ${err.message}`));
+  };
 
   componentDidMount() {
     this.props.getChannels();
@@ -47,7 +60,9 @@ class App extends Component {
     return (
       <div className="main-container">
         <nav className="nav-container">
+          <video />
           <nav className="login-user">
+            <div className="profile-img" onClick={this.handleProfileImg} />
             {this.props.currentUser}
           </nav>
           <nav id="nav-channels">

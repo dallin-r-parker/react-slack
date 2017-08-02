@@ -15,6 +15,18 @@
 		max-width: 12vw;
 		min-width: 220px;
 		height:100%;
+		.login-user{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height: 6vh;
+			border: 1px solid green;
+			.profile-img{
+				border: 1px solid red;
+				height: 5vh;
+				width: 5vh;
+			}
+		}
 		#nav-channels{
 			display: flex;
 			justify-content:space-between;
