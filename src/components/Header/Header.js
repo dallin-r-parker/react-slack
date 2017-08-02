@@ -2,8 +2,6 @@ import React from 'react';
 import './Header.css';
 
 export default function Header(props) {
-  function handleLogout() {}
-
   return (
     <header>
       <title>#lead</title>
@@ -27,8 +25,8 @@ export default function Header(props) {
         <i className="fa fa-ellipsis-v" aria-hidden="true">
           {/* */}
         </i>
-        <div className="menu">
-          <p onClick={handleLogout}>logout</p>
+        <div className="menu" style={{ display: 'none' }}>
+          <p>logout</p>
         </div>
       </div>
     </header>

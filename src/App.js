@@ -47,6 +47,9 @@ class App extends Component {
     return (
       <div className="main-container">
         <nav className="nav-container">
+          <nav className="login-user">
+            {this.props.currentUser}
+          </nav>
           <nav id="nav-channels">
             <p onClick={this.handleOpenModal}>
               CHANNELS
@@ -91,7 +94,8 @@ function mapStateToProps({ navReducer, messageReducer }) {
     directChannels: navReducer.directChannels,
     showModal: navReducer.showModal,
     newChannel: navReducer.newChannel,
-    userId: messageReducer.userId
+    userId: messageReducer.userId,
+    currentUser: messageReducer.currentUser
   };
 }
 export default connect(mapStateToProps, {
