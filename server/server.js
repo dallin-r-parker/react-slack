@@ -4,7 +4,9 @@ const massive = require('massive')
 const express = require('express')
 const session = require('express-session')
 const bodyParser = require('body-parser')
-const channels = ['lead', 'random', 'working', 'devTeam'];
+
+//TODO: parse all login's to lowercase and return all with first letter capitalized
+//TODO: if someone add's a "#" to their channel, remove it. use regex
 
 // INITIATE EXPRESS APP/SOCKETS & SET LISTENING PORT ================
 const app = module.exports = express();
@@ -46,7 +48,7 @@ io.on('connection', mainChannel)
 app.get('/api/all-channels', getAll)
 
 // GIPHY ENDPOINTS =====================================
-app.get('/api/giphy', giphyGet)
+app.post('/api/giphy/query?=', giphyGet)
 
 // POST ENDPOINTS ======================================
 app.post('/api/channel', addChannel)

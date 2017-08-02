@@ -38,7 +38,9 @@ class MessagesLayout extends Component {
         message: data,
         user: this.props.currentUser
       };
+      const reset = '';
       this.props.updateMessages(newMessage);
+      this.props.updateInput(reset);
     });
   }
 
@@ -69,7 +71,11 @@ class MessagesLayout extends Component {
         <div className="message-container">
           {messages}
         </div>
-        <ChatInput update={this.handleChatUpdate} action={this.sendMessage} />
+        <ChatInput
+          update={this.handleChatUpdate}
+          action={this.sendMessage}
+          value={this.props.message}
+        />
       </div>
     );
   }

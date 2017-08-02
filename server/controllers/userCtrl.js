@@ -5,11 +5,13 @@ const {hashPW, verifyPW} = require('./encrypt')
 
 exports.loginUser = (req, res, next) => {
 	const {email, password} = req.body
+	const lowEmail = email.toLowerCase()
+	const lowPW = password.toLowerCase()
 
-	app.get('db').check_by_email([email]).then(user => {
+	app.get('db').check_by_email([lowEmail]).then(user => {
 		if(user.length === 0) return res.status(404).send("Not Found")
 		user = user[0]
-		if(verifyPW(password, user.password)){
+		if(verifyPW(lowPW, user.password)){
 			delete user.email
 			delete user.password
 			req.session.user = user

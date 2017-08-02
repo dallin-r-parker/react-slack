@@ -33,7 +33,11 @@ class App extends Component {
   handleOpenModal = () => this.props.handleModal(true);
   handleCloseModal = () => this.props.handleModal(false);
 
+  componentDidMount() {
+    this.props.getChannels();
+  }
   render() {
+    //TODO: potentially change map to reduce so we can remove duplicates, but have a componentDidMount render check
     const navChannels = this.props.channels.map((channel, i) =>
       <Nav key={i} channels={channel} />
     );
