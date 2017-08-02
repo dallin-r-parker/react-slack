@@ -35,6 +35,7 @@ class App extends Component {
   handleCloseModal = () => this.props.handleModal(false);
 
   handleProfileImg = () => {
+    //TODO: look into face detection software for logging in and adding funny effects to profile img
     const constraints = { audio: false, video: { width: 1280, height: 720 } };
     navigator.mediaDevices
       .getUserMedia(constraints)
