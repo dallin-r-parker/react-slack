@@ -1,72 +1,72 @@
 @import "./styles/base.scss";
 
 .main-container {
-	display: flex;
-	height: 100vh;
-	width: 100%;
-	font-family:$lato;
-	.nav-container{
-		border-right:1px solid #E8E8E8;
-		font-size: 1em;
-		display: flex;
-		flex-direction:column;
-		background: #F8F8FA;
-		color: #94979B;
-		max-width: 12vw;
-		min-width: 220px;
-		height:100%;
-		video{
-			height: 25vh;
-			position: absolute;
-			border: 1px solid black;
-			top: 7vh;
-			left: 38vh;
-		}
-		.login-user{
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			height: 6vh;
-			border: 1px solid green;
-			.profile-img{
-				border: 1px solid red;
-				height: 5vh;
-				width: 5vh;
-			}
-		}
-		#nav-channels{
-			display: flex;
-			justify-content:space-between;
-			padding:15px 10px;
-			cursor: pointer;
-			p{
-				margin: 0;
-				width: 100%;
-				display: flex;
-				justify-content:space-between;
-			}
-			&:hover{
-				color: black;
-			}
-		}
-		#nav-dm{
-			display: flex;
-			justify-content:space-between;
-			padding:15px 10px;
-			cursor: pointer;
-			p{
-				margin: 15px 0 0;
-				width: 100%;
-				display: flex;
-				justify-content:space-between;
-			}
-			&:hover{
-				color: black;
-			}
-		}
-	}
-	.message-container {
-		width:calc(100vw - 15vw);
-		height: 100vh;
-	}
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  font-family: $lato;
+  .nav-container {
+    border-right: 1px solid #e8e8e8;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    background: #f8f8fa;
+    color: #94979b;
+    max-width: 12vw;
+    min-width: 220px;
+    height: 100%;
+    video {
+      height: 25vh;
+      position: absolute;
+      border: 1px solid black;
+      top: 7vh;
+      left: 38vh;
+    }
+    .login-user {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 6vh;
+      border: 1px solid green;
+      .profile-img {
+        border: 1px solid red;
+        height: 5vh;
+        width: 5vh;
+      }
+    }
+    #nav-channels {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 10px;
+      cursor: pointer;
+      p {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      &:hover {
+        color: black;
+      }
+    }
+    #nav-dm {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 10px;
+      cursor: pointer;
+      p {
+        margin: 15px 0 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  .message-container {
+    width: calc(100vw - 15vw);
+    height: 100vh;
+  }
 }
