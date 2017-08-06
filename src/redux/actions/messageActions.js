@@ -27,7 +27,7 @@ export function updateUserId(value) {
 }
 
 export function updateGiphy(value) {
-  console.log('MessageAction: ', value);
+  console.log('updateGiphy Fried');
   return {
     type: 'UPDATE_GIPHY',
     payload: value

@@ -34,6 +34,7 @@ class MessagesLayout extends Component {
   handleChatMessage() {
     //TODO: WORK ON MAKING SURE THE USER IS SENDING THEIR NAME & Receiving OTHER NAMES
     socket.on('chat_message', data => {
+      console.log('handleChat: ', data);
       const time = moment().format('h:mm A');
       const newMessage = {
         time: time,
@@ -93,7 +94,8 @@ function mapStateToProps({ messageReducer }) {
     message: messageReducer.message,
     messages: messageReducer.messages,
     currentUser: messageReducer.currentUser,
-    userId: messageReducer.userId
+    userId: messageReducer.userId,
+    giphy: messageReducer.giphy
   };
 }
 
