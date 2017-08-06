@@ -18,11 +18,12 @@
     height: calc(100vw - 55vw);
   }
   video {
-    height: 25vh;
+    height: 30vh;
     border: 1px solid black;
     margin-bottom: 25px;
   }
   canvas {
+    display: none;
     height: 25vh;
     border: 1px solid #ff247a;
     margin-bottom: 25px;

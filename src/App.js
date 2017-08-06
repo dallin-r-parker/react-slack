@@ -59,22 +59,6 @@ class App extends Component {
   //  }
   //};
 
-  //handleProfileImg = () => {
-  //  count++;
-  //
-  //  //TODO: look into face detection software for logging in and adding funny effects to profile img
-  //  const constraints = { audio: false, video: { width: 1280, height: 720 } };
-  //  navigator.mediaDevices
-  //    .getUserMedia(constraints)
-  //    .then(mediaStream => {
-  //      console.log('mediastream: ', mediaStream);
-  //      const video = document.querySelector('video');
-  //      video.srcObject = mediaStream;
-  //      video.play();
-  //    })
-  //    .catch(err => console.log(`${err.name}: ${err.message}`));
-  //};
-
   componentDidMount() {
     this.props.getChannels();
   }
