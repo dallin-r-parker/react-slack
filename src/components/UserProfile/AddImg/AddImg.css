@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/* App Colors */
+/* App Font */
+/* App Mixins */
+/* App Variables */
+/* App Functions */
+.add-img-modal {
+  font-family: "Lato", sans-serif;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  position: absolute;
+}
+.add-img-modal .img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(100vw - 55vw);
+}
+.add-img-modal video {
+  height: 30vh;
+  border: 1px solid black;
+  margin-bottom: 25px;
+}
+.add-img-modal canvas {
+  display: none;
+  height: 25vh;
+  border: 1px solid #ff247a;
+  margin-bottom: 25px;
+}
+.add-img-modal .btn-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+}
+.add-img-modal .btn-wrap button {
+  padding: 15px;
+  outline: none;
+  border: none;
+  font-size: 1.1em;
+  background: #2ab27b;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.add-img-modal .btn-wrap button:nth-child(2) {
+  padding: 15px;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-right: 10px;
+  outline: none;
+  border: 0.5px solid #cdcece;
+  border-radius: 5px;
+  background: white;
+  color: #555459;
+  cursor: pointer;
+}
+.add-img-modal .btn-wrap button:nth-child(2):hover {
+  color: #2780f8;
+}
