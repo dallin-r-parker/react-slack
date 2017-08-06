@@ -26,10 +26,8 @@ class MessagesLayout extends Component {
   componentDidMount() {
     this.connectUser();
   }
-
-  connectUser() {
-    socket.on('user_connected', this.props.currentUser);
-  }
+  connectUser = () => socket.on('user_connected', this.props.currentUser);
+  handleChatUpdate = value => this.props.updateInput(value);
 
   handleChatMessage() {
     //TODO: WORK ON MAKING SURE THE USER IS SENDING THEIR NAME & Receiving OTHER NAMES
@@ -47,13 +45,8 @@ class MessagesLayout extends Component {
     });
   }
 
-  handleChatUpdate(value) {
-    this.props.updateInput(value);
-  }
-
   sendMessage(e) {
     const { message, updateGiphy } = this.props;
-
     if (e === 13 && message.includes('/giphy')) {
       updateGiphy(true);
       socket.emit('chat_message', { message: message, type: 'giphy' });
