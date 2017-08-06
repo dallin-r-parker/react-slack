@@ -19,11 +19,3 @@ export default function UserProfile(props) {
     </div>
   );
 }
-
-// let active;
-//console.log("active:", active)
-//
-// const handleMouseEnter = (e) => (active = true)
-////console.log("Enter: ", e.target)
-//const handleMouseLeave = (e) => (active = false)
-//console.log("Leave: ", e.target)

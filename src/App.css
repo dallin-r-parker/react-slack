@@ -21,42 +21,6 @@
   min-width: 220px;
   height: 100%;
 }
-.main-container .nav-container video {
-  height: 25vh;
-  position: absolute;
-  border: 1px solid black;
-  top: 7vh;
-  left: 38vh;
-}
-.main-container .nav-container .snapshot {
-  position: absolute;
-  border: 1px solid black;
-  border-top: none;
-  padding: 5px;
-  top: 32vh;
-  left: 38vh;
-  width: 27%;
-  font-size: 1.2em;
-}
-.main-container .nav-container .snapshot i:hover {
-  cursor: pointer;
-}
-.main-container .nav-container .output {
-  width: 27vw;
-  top: 36vh;
-  height: 25vh;
-  position: absolute;
-  left: 38vh;
-  border: 1px solid #30dfff;
-}
-.main-container .nav-container canvas {
-  width: 27vw;
-  top: 36vh;
-  height: 25vh;
-  position: absolute;
-  left: 74vh;
-  border: 1px solid #ff247a;
-}
 .main-container .nav-container #nav-channels {
   display: flex;
   justify-content: space-between;

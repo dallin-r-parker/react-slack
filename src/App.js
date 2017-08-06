@@ -37,7 +37,9 @@ class App extends Component {
   handleChange = e => this.props.handleChannelChange(e);
   handleOpenModal = () => this.props.handleModal(true);
   handleCloseModal = () => this.props.handleModal(false);
-  handleAddImg = () => this.props.handleAddImg(!this.props.addImg);
+  handleAddImg() {
+    this.props.handleAddImg(!this.props.addImg);
+  }
 
   //takePhoto = () => {
   //  //TODO: add a closure function for setting up initial state of screenshot
