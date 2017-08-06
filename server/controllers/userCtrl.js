@@ -37,9 +37,9 @@ exports.registerUser = (req, res) => {
 	})
 }
 
+//TODO: LOOK INTO HAVING A REDIRECT BASED ON IF SOMEONE IS ON A SESSION
 exports.checkUser = ({session}, res) => {
 	const {user} = session
 	if(!user) return res.status(404).send()
-	console.log(user)
 	res.status(200).send(user)
 }

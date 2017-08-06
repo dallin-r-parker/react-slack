@@ -41,8 +41,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.getChannels();
     this.props.checkUser();
+    this.props.getChannels();
   }
 
   render() {

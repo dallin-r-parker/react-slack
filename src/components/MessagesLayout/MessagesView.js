@@ -31,6 +31,7 @@ class MessagesLayout extends Component {
   }
 
   handleChatMessage() {
+    //TODO: WORK ON MAKING SURE THE USER IS SENDING THEIR NAME & Receiving OTHER NAMES
     socket.on('chat_message', data => {
       const time = moment().format('h:mm A');
       const newMessage = {
