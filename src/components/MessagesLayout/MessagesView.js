@@ -63,6 +63,7 @@ class MessagesLayout extends Component {
           message={e.message.message}
           user={e.user}
           time={e.time}
+          giphy={this.props.giphy}
         />
       );
     });
