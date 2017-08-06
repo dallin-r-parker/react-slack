@@ -22,6 +22,35 @@
       top: 7vh;
       left: 38vh;
     }
+    .snapshot {
+      position: absolute;
+      border: 1px solid black;
+      border-top: none;
+      padding: 5px;
+      top: 32vh;
+      left: 38vh;
+      width: 27%;
+      font-size: 1.2em;
+      i:hover {
+        cursor: pointer;
+      }
+    }
+    .output {
+      width: 27vw;
+      top: 36vh;
+      height: 25vh;
+      position: absolute;
+      left: 38vh;
+      border: 1px solid #30dfff;
+    }
+    canvas {
+      width: 27vw;
+      top: 36vh;
+      height: 25vh;
+      position: absolute;
+      left: 74vh;
+      border: 1px solid #ff247a;
+    }
     .login-user {
       display: flex;
       justify-content: space-around;
@@ -29,9 +58,16 @@
       height: 6vh;
       border: 1px solid green;
       .profile-img {
-        border: 1px solid red;
+        display: flex;
+        border: 1px solid gray;
         height: 5vh;
         width: 5vh;
+        justify-content: center;
+        align-items: flex-end;
+        i {
+          font-size: 3em;
+          color: lightgreen;
+        }
       }
     }
     #nav-channels {
