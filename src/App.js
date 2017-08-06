@@ -11,7 +11,8 @@ import {
   getChannels,
   handleModal,
   handleChannelChange,
-  handleAddImg
+  handleAddImg,
+  checkUser
 } from './redux/actions/navActions';
 
 class App extends Component {
@@ -22,8 +23,6 @@ class App extends Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    //this.handleProfileImg = this.handleProfileImg.bind(this);
-    //this.takePhoto = this.takePhoto.bind(this);
     this.handleAddImg = this.handleAddImg.bind(this);
   }
 
@@ -41,29 +40,12 @@ class App extends Component {
     this.props.handleAddImg(!this.props.addImg);
   }
 
-  //takePhoto = () => {
-  //  //TODO: add a closure function for setting up initial state of screenshot
-  //  console.log(count);
-  //  if (count > 1) {
-  //    const canvas = document.querySelector('canvas');
-  //    const context = canvas.getContext('2d');
-  //    let w = canvas.width;
-  //    let h = canvas.height;
-  //    let v = document.querySelector('video');
-  //    let p = document.getElementById('photo');
-  //    context.drawImage(v, 0, 0, w, h);
-  //    const data = canvas.toDataURL('image/png');
-  //    console.log('data: ', data);
-  //    p.setAttribute('src', data);
-  //    console.log('p: ', p);
-  //  }
-  //};
-
   componentDidMount() {
     this.props.getChannels();
+    this.props.checkUser();
   }
+
   render() {
-    //TODO: potentially change map to reduce so we can remove duplicates, but have a componentDidMount render check
     const navChannels = this.props.channels.map((channel, i) =>
       <Nav key={i} channels={channel} />
     );
@@ -132,5 +114,6 @@ export default connect(mapStateToProps, {
   getChannels,
   handleModal,
   handleChannelChange,
-  handleAddImg
+  handleAddImg,
+  checkUser
 })(App);

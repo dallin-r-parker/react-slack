@@ -36,3 +36,10 @@ exports.registerUser = (req, res) => {
 		}
 	})
 }
+
+exports.checkUser = ({session}, res) => {
+	const {user} = session
+	if(!user) return res.status(404).send()
+	console.log(user)
+	res.status(200).send(user)
+}

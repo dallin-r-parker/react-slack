@@ -22,7 +22,6 @@ export default function AddImg(props) {
     let h = canvas.height;
     let v = document.querySelector('video');
     let p = document.querySelector('img');
-    console.log(w, h);
     context.drawImage(v, 0, 0, w, h);
     const data = canvas.toDataURL('image/png');
     p.setAttribute('src', data);
