@@ -36,3 +36,10 @@ export function handleModal(value) {
     payload: value
   };
 }
+
+export function handleAddImg(value) {
+  return {
+    type: 'ADD_IMG',
+    payload: value
+  };
+}

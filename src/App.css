@@ -57,25 +57,6 @@
   left: 74vh;
   border: 1px solid #ff247a;
 }
-.main-container .nav-container .login-user {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 6vh;
-  border: 1px solid green;
-}
-.main-container .nav-container .login-user .profile-img {
-  display: flex;
-  border: 1px solid gray;
-  height: 5vh;
-  width: 5vh;
-  justify-content: center;
-  align-items: flex-end;
-}
-.main-container .nav-container .login-user .profile-img i {
-  font-size: 3em;
-  color: lightgreen;
-}
 .main-container .nav-container #nav-channels {
   display: flex;
   justify-content: space-between;

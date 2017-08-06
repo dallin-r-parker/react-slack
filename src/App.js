@@ -10,10 +10,10 @@ import {
   addChannel,
   getChannels,
   handleModal,
-  handleChannelChange
+  handleChannelChange,
+  handleAddImg
 } from './redux/actions/navActions';
 
-let count = 0;
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +24,7 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     //this.handleProfileImg = this.handleProfileImg.bind(this);
     //this.takePhoto = this.takePhoto.bind(this);
+    this.handleAddImg = this.handleAddImg.bind(this);
   }
 
   handleAddChannel() {
@@ -36,6 +37,7 @@ class App extends Component {
   handleChange = e => this.props.handleChannelChange(e);
   handleOpenModal = () => this.props.handleModal(true);
   handleCloseModal = () => this.props.handleModal(false);
+  handleAddImg = () => this.props.handleAddImg(!this.props.addImg);
 
   //takePhoto = () => {
   //  //TODO: add a closure function for setting up initial state of screenshot
@@ -85,30 +87,11 @@ class App extends Component {
     return (
       <div className="main-container">
         <nav className="nav-container">
-          {/*<nav className="login-user">*/}
-          {/*<div className="profile-img" onClick={this.handleProfileImg}>*/}
-          {/*<i*/}
-          {/*className="fa fa-user"*/}
-          {/*onClick={this.takePhoto}*/}
-          {/*aria-hidden="true"*/}
-          {/*>*/}
-          {/*/!* *!/*/}
-          {/*</i>*/}
-          {/*</div>*/}
-          {/*{this.props.currentUser}*/}
-          {/*<video />*/}
-          {/*<div className="snapshot">*/}
-          {/*<i className="fa fa-camera" aria-hidden="true">*/}
-          {/*/!* *!/*/}
-          {/*</i>*/}
-          {/*</div>*/}
-          {/*<div className="output">*/}
-          {/*<img classID="photo" alt="profile results" />*/}
-          {/*</div>*/}
-          {/*<canvas>*/}
-          {/*/!*screenshot*!/*/}
-          {/*</canvas>*/}
-          {/*</nav>*/}
+          <UserProfile
+            user={this.props.currentUser}
+            addImg={this.props.addImg}
+            action={this.handleAddImg}
+          />
           <nav id="nav-channels">
             <p onClick={this.handleOpenModal}>
               CHANNELS
@@ -154,12 +137,14 @@ function mapStateToProps({ navReducer, messageReducer }) {
     showModal: navReducer.showModal,
     newChannel: navReducer.newChannel,
     userId: messageReducer.userId,
-    currentUser: messageReducer.currentUser
+    currentUser: messageReducer.currentUser,
+    addImg: navReducer.addImg
   };
 }
 export default connect(mapStateToProps, {
   addChannel,
   getChannels,
   handleModal,
-  handleChannelChange
+  handleChannelChange,
+  handleAddImg
 })(App);

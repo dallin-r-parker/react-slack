@@ -1,0 +1,24 @@
+.current-user {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 6vh;
+  border: 1px solid green;
+}
+.current-user .profile-img {
+  display: flex;
+  border: 1px solid gray;
+  height: 5vh;
+  width: 5vh;
+  justify-content: center;
+  align-items: flex-end;
+}
+.current-user .profile-img:hover {
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.current-user .profile-img i {
+  position: absolute;
+  font-size: 3em;
+  color: lightgrey;
+}
