@@ -7,10 +7,11 @@ import ChatInput from './ChatInput/ChatInput';
 import Messages from './Messages';
 import './MessagesView.css';
 import {
+  updateGiphy,
   updateInput,
-  updateMessages,
-  updateGiphy
+  updateMessages
 } from '../../redux/actions/messageActions';
+
 const socket = io();
 
 class MessagesLayout extends Component {
@@ -50,12 +51,13 @@ class MessagesLayout extends Component {
   }
 
   sendMessage(e) {
-    if (e === 13 && this.props.message === '/giphy') {
-      console.log('giphy');
-      this.props.updateGiphy(true);
-      //socket.emit('chat_message', { message: this.props.message });
+    const { message, updateGiphy } = this.props;
+
+    if (e === 13 && message.includes('/giphy')) {
+      updateGiphy(true);
+      socket.emit('chat_message', { message: message, type: 'giphy' });
     } else if (e === 13) {
-      socket.emit('chat_message', { message: this.props.message });
+      socket.emit('chat_message', { message: message, type: null });
     }
   }
 
