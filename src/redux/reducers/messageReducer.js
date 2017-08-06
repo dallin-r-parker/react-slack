@@ -2,11 +2,13 @@ const initialState = {
   message: '',
   messages: [],
   currentUser: '',
-  userId: ''
+  userId: '',
+  giphy: false
 };
 
 export default function messageReducer(state = initialState, action) {
   const { type, payload } = action;
+  console.log('MessageReducer: ', action);
 
   switch (type) {
     case 'UPDATE_MESSAGE':
@@ -21,6 +23,8 @@ export default function messageReducer(state = initialState, action) {
       return Object.assign({}, state, {
         currentUser: `${payload.firstname} ${payload.lastname}`
       });
+    case 'UPDATE_GIPHY':
+      return Object.assign({}, state, { giphy: payload });
     default:
       return state;
   }

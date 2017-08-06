@@ -8,9 +8,9 @@ import Messages from './Messages';
 import './MessagesView.css';
 import {
   updateInput,
-  updateMessages
+  updateMessages,
+  updateGiphy
 } from '../../redux/actions/messageActions';
-
 const socket = io();
 
 class MessagesLayout extends Component {
@@ -50,7 +50,11 @@ class MessagesLayout extends Component {
   }
 
   sendMessage(e) {
-    if (e === 13) {
+    if (e === 13 && this.props.message === '/giphy') {
+      console.log('giphy');
+      this.props.updateGiphy(true);
+      //socket.emit('chat_message', { message: this.props.message });
+    } else if (e === 13) {
       socket.emit('chat_message', { message: this.props.message });
     }
   }
@@ -91,6 +95,8 @@ function mapStateToProps({ messageReducer }) {
   };
 }
 
-export default connect(mapStateToProps, { updateInput, updateMessages })(
-  MessagesLayout
-);
+export default connect(mapStateToProps, {
+  updateInput,
+  updateMessages,
+  updateGiphy
+})(MessagesLayout);
