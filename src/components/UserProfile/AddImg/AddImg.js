@@ -35,7 +35,7 @@ export default function AddImg(props) {
         <h1>Update Profile Image</h1>
         <video classID="video" />
         <canvas classID="canvas" />
-        <img src="" />
+        <img src="" alt="screenshot" />
         <div className="btn-wrap">
           <button onClick={takePhoto}>Take Photo</button>
           <button>Cancel</button>
