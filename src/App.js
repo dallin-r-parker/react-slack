@@ -5,11 +5,14 @@ import Nav from './components/Nav/Nav';
 import DirectChannels from './components/DirectChannels/DirectChannels';
 import CreateChannel from './components/CreateChannel/CreateChannel';
 import Messages from './components/MessagesLayout/MessagesView';
+import UserProfile from './components/UserProfile/UserProfile';
 import {
   addChannel,
   getChannels,
   handleModal,
-  handleChannelChange
+  handleChannelChange,
+  handleAddImg,
+  checkUser
 } from './redux/actions/navActions';
 
 class App extends Component {
@@ -20,6 +23,7 @@ class App extends Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleAddImg = this.handleAddImg.bind(this);
   }
 
   handleAddChannel() {
@@ -32,6 +36,14 @@ class App extends Component {
   handleChange = e => this.props.handleChannelChange(e);
   handleOpenModal = () => this.props.handleModal(true);
   handleCloseModal = () => this.props.handleModal(false);
+  handleAddImg() {
+    this.props.handleAddImg(!this.props.addImg);
+  }
+
+  componentDidMount() {
+    this.props.checkUser();
+    this.props.getChannels();
+  }
 
   render() {
     const navChannels = this.props.channels.map((channel, i) =>
@@ -43,6 +55,11 @@ class App extends Component {
     return (
       <div className="main-container">
         <nav className="nav-container">
+          <UserProfile
+            user={this.props.currentUser}
+            addImg={this.props.addImg}
+            action={this.handleAddImg}
+          />
           <nav id="nav-channels">
             <p onClick={this.handleOpenModal}>
               CHANNELS
@@ -87,12 +104,16 @@ function mapStateToProps({ navReducer, messageReducer }) {
     directChannels: navReducer.directChannels,
     showModal: navReducer.showModal,
     newChannel: navReducer.newChannel,
-    userId: messageReducer.userId
+    userId: messageReducer.userId,
+    currentUser: messageReducer.currentUser,
+    addImg: navReducer.addImg
   };
 }
 export default connect(mapStateToProps, {
   addChannel,
   getChannels,
   handleModal,
-  handleChannelChange
+  handleChannelChange,
+  handleAddImg,
+  checkUser
 })(App);

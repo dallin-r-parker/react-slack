@@ -4,7 +4,7 @@ header {
 	background: white;
 	display: flex;
 	position: fixed;
-	justify-content:flex-end;
+	justify-content: flex-end;
 	height: 6vh;
 	width: 87vw;
 	color: $header-grey;
@@ -23,7 +23,7 @@ header {
 			width: 50%;
 			padding-left: 5px;
 			font-size: .9em;
-			&:focus{
+			&:focus {
 				outline: none;
 			}
 			&::placeholder {
@@ -33,6 +33,19 @@ header {
 		i:hover {
 			color: $royal-blue;
 			cursor: pointer;
+		}
+		.menu {
+			color: white;
+			position: absolute;
+			top: 6vh;
+			right: 25px;
+			width: 300px;
+			height: 15vh;
+			background: lightslategrey;
+			p:hover{
+				cursor: pointer;
+				color: #2AB27B;
+			}
 		}
 	}
 }

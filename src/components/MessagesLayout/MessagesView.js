@@ -31,10 +31,17 @@ class MessagesLayout extends Component {
   }
 
   handleChatMessage() {
+    //TODO: WORK ON MAKING SURE THE USER IS SENDING THEIR NAME & Receiving OTHER NAMES
     socket.on('chat_message', data => {
       const time = moment().format('h:mm A');
-      const newMessage = { time: time, message: data, user: 'Dallin Parker' };
+      const newMessage = {
+        time: time,
+        message: data,
+        user: this.props.currentUser
+      };
+      const reset = '';
       this.props.updateMessages(newMessage);
+      this.props.updateInput(reset);
     });
   }
 
@@ -65,7 +72,11 @@ class MessagesLayout extends Component {
         <div className="message-container">
           {messages}
         </div>
-        <ChatInput update={this.handleChatUpdate} action={this.sendMessage} />
+        <ChatInput
+          update={this.handleChatUpdate}
+          action={this.sendMessage}
+          value={this.props.message}
+        />
       </div>
     );
   }

@@ -1,4 +1,15 @@
 import axios from 'axios';
+import { updateCurrentUser } from './messageActions';
+
+export function checkUser() {
+  return function(dispatch) {
+    axios.get('/api/check-user').then(({ data }) => {
+      const { firstname, lastname } = data;
+      const currUser = Object.assign({}, { firstname, lastname });
+      dispatch(updateCurrentUser(currUser));
+    });
+  };
+}
 
 export function getChannels() {
   return function(dispatch) {
@@ -33,6 +44,13 @@ export function addChannel(value) {
 export function handleModal(value) {
   return {
     type: 'TOGGLE_MODAL',
+    payload: value
+  };
+}
+
+export function handleAddImg(value) {
+  return {
+    type: 'ADD_IMG',
     payload: value
   };
 }
