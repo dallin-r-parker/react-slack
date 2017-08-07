@@ -27,9 +27,15 @@ export function updateUserId(value) {
 }
 
 export function updateGiphy(value) {
-  console.log('updateGiphy Fried');
   return {
     type: 'UPDATE_GIPHY',
+    payload: value
+  };
+}
+
+export function updateGiphyUrl(value) {
+  return {
+    type: 'UPDATE_URL',
     payload: value
   };
 }

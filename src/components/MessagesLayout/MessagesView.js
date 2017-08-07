@@ -9,7 +9,8 @@ import './MessagesView.css';
 import {
   updateGiphy,
   updateInput,
-  updateMessages
+  updateMessages,
+  updateGiphyUrl
 } from '../../redux/actions/messageActions';
 
 const socket = io();
@@ -41,6 +42,11 @@ class MessagesLayout extends Component {
       };
       const reset = '';
       this.props.updateMessages(newMessage);
+      if (data.data) {
+        console.log('made it: ', data.data[0].images.downsized);
+        const query = data.data[0].images.downsized;
+        this.props.updateGiphyUrl(query);
+      }
       this.props.updateInput(reset);
     });
   }
@@ -64,6 +70,7 @@ class MessagesLayout extends Component {
           user={e.user}
           time={e.time}
           giphy={this.props.giphy}
+          url={this.props.url}
         />
       );
     });
@@ -89,12 +96,14 @@ function mapStateToProps({ messageReducer }) {
     messages: messageReducer.messages,
     currentUser: messageReducer.currentUser,
     userId: messageReducer.userId,
-    giphy: messageReducer.giphy
+    giphy: messageReducer.giphy,
+    url: messageReducer.url
   };
 }
 
 export default connect(mapStateToProps, {
   updateInput,
   updateMessages,
-  updateGiphy
+  updateGiphy,
+  updateGiphyUrl
 })(MessagesLayout);
