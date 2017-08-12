@@ -33,21 +33,17 @@ class MessagesLayout extends Component {
   handleChatMessage() {
     //TODO: WORK ON MAKING SURE THE USER IS SENDING THEIR NAME & Receiving OTHER NAMES
     socket.on('chat_message', data => {
-      console.log('handleChat: ', data);
       const time = moment().format('h:mm A');
       const newMessage = {
         time: time,
         message: data,
         user: this.props.currentUser
       };
-      const reset = '';
       this.props.updateMessages(newMessage);
       if (data.data) {
-        console.log('made it: ', data.data[0].images.downsized);
         const query = data.data[0].images.downsized;
         this.props.updateGiphyUrl(query);
       }
-      this.props.updateInput(reset);
     });
   }
 

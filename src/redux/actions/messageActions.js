@@ -6,9 +6,13 @@ export function updateInput(value) {
 }
 
 export function updateMessages(value) {
-  return {
-    type: 'UPDATE_MESSAGES',
-    payload: value
+  return function(dispatch) {
+    dispatch({
+      type: 'UPDATE_MESSAGES',
+      payload: value
+    });
+    const resetInput = '';
+    dispatch(updateInput(resetInput));
   };
 }
 
