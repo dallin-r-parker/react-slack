@@ -110,9 +110,7 @@ function mapStateToProps({ messageReducer }) {
     messages: messageReducer.messages,
     giphMessages: messageReducer.giphMessages,
     currentUser: messageReducer.currentUser,
-    userId: messageReducer.userId,
-    giphy: messageReducer.giphy,
-    url: messageReducer.url
+    userId: messageReducer.userId
   };
 }
 
