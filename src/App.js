@@ -28,7 +28,7 @@ class App extends Component {
 
   handleAddChannel() {
     const { newChannel, userId } = this.props;
-    const channel = Object.assign({}, { channels: newChannel, id: userId });
+    const channel = Object.assign({}, { channel: newChannel, id: userId });
     this.props.addChannel(channel);
     this.handleCloseModal();
   }

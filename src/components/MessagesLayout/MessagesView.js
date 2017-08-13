@@ -31,7 +31,6 @@ class MessagesLayout extends Component {
   handleChatUpdate = value => this.props.updateInput(value);
 
   handleChatMessage() {
-    //TODO: WORK ON MAKING SURE THE USER IS SENDING THEIR NAME & Receiving OTHER NAMES
     socket.on('chat_message', data => {
       const time = moment().format('h:mm A');
       const newMessage = {
@@ -48,8 +47,11 @@ class MessagesLayout extends Component {
   }
 
   sendMessage(e) {
+    console.log('event: ', e);
     const { message, updateGiphy } = this.props;
     if (e === 13 && message.includes('/giphy')) {
+      const m = message.replace('/giphy ', '');
+      this.props.updateInput(m);
       updateGiphy(true);
       socket.emit('chat_message', { message: message, type: 'giphy' });
     } else if (e === 13) {

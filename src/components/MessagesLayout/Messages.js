@@ -15,7 +15,9 @@ export default function Messages(props) {
       <p>
         {props.message}
       </p>
-      <img src={url} height={height} width={width} />
+      {props.giphy
+        ? <img src={url} height={height} width={width} alt="" />
+        : null}
     </div>
   );
 }
