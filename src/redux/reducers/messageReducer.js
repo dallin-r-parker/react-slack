@@ -9,7 +9,6 @@ const initialState = {
 
 export default function messageReducer(state = initialState, action) {
   const { type, payload } = action;
-  console.log(action);
   switch (type) {
     case 'UPDATE_MESSAGE':
       return Object.assign({}, state, { message: payload });

@@ -8,7 +8,7 @@ const initialState = {
 
 export default function navReducer(state = initialState, action) {
   const { type, payload } = action;
-  console.log(action);
+
   switch (type) {
     case 'ADD_CHANNEL':
       return Object.assign({}, state, {

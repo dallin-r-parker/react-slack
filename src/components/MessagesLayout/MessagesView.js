@@ -47,7 +47,6 @@ class MessagesLayout extends Component {
   }
 
   sendMessage(e) {
-    console.log('event: ', e);
     const { message, updateGiphy } = this.props;
     if (e === 13 && message.includes('/giphy')) {
       const m = message.replace('/giphy ', '');
