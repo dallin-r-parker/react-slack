@@ -15,51 +15,85 @@
   top: 0;
   left: 0;
   background: white;
-  color: lightgray; }
-  .create-channel-container .channel-wrap {
-    padding-top: 7%;
-    width: 42%; }
-    .create-channel-container .channel-wrap h2 {
-      font-size: 2em;
-      color: black; }
-    .create-channel-container .channel-wrap h5 {
-      font-weight: lighter;
-      color: #CDCECE;
-      line-height: 20px; }
-    .create-channel-container .channel-wrap p {
-      margin: 0 0 7px;
-      color: #464646; }
-    .create-channel-container .channel-wrap input {
-      font-size: 1em;
-      padding-left: 10px;
-      width: 97%;
-      height: 5vh;
-      border-radius: 5px;
-      outline: none;
-      border: 1px solid #CDCECE;
-      margin-bottom: 20px;
-      font-family: "Lato", sans-serif; }
-    .create-channel-container .channel-wrap .btn-wrap {
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 7px;
-      font-family: "Lato", sans-serif; }
-      .create-channel-container .channel-wrap .btn-wrap button {
-        padding: 13px;
-        font-size: .9em;
-        font-weight: bold;
-        margin-right: 10px;
-        outline: none;
-        border: 0.5px solid #CDCECE;
-        border-radius: 5px;
-        background: white;
-        color: #555459;
-        cursor: pointer; }
-      .create-channel-container .channel-wrap .btn-wrap .active {
-        background: #64D25A !important; }
-      .create-channel-container .channel-wrap .btn-wrap button:first-child:hover {
-        color: #2780F8;
-        background: white; }
-      .create-channel-container .channel-wrap .btn-wrap button:nth-child(2) {
-        background: #CDCECE;
-        color: white; }
+  color: lightgray;
+}
+.create-channel-container .channel-wrap {
+  padding-top: 7%;
+  width: 42%;
+}
+.create-channel-container .channel-wrap .esc-wrap {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  color: #636262;
+}
+.create-channel-container .channel-wrap .esc-wrap:hover {
+  background: #dedcdc;
+  cursor: pointer;
+}
+.create-channel-container .channel-wrap .esc-wrap i {
+  font-size: 2.25em;
+  font-weight: lighter;
+}
+.create-channel-container .channel-wrap .esc-wrap esc {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8em;
+}
+.create-channel-container .channel-wrap h2 {
+  font-size: 2em;
+  color: black;
+}
+.create-channel-container .channel-wrap h5 {
+  font-weight: lighter;
+  color: #cdcece;
+  line-height: 20px;
+}
+.create-channel-container .channel-wrap p {
+  color: #464646;
+}
+.create-channel-container .channel-wrap input {
+  font-size: 1em;
+  padding-left: 10px;
+  width: 97%;
+  height: 5vh;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #cdcece;
+  margin: 7px 0 20px;
+  font-family: "Lato", sans-serif;
+}
+.create-channel-container .channel-wrap .btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 7px;
+  font-family: "Lato", sans-serif;
+}
+.create-channel-container .channel-wrap .btn-wrap button {
+  padding: 13px;
+  font-size: .9em;
+  font-weight: bold;
+  margin-right: 10px;
+  outline: none;
+  border: 0.5px solid #cdcece;
+  border-radius: 5px;
+  background: white;
+  color: #555459;
+  cursor: pointer;
+}
+.create-channel-container .channel-wrap .btn-wrap button:first-child:hover {
+  color: #2780f8;
+  background: white;
+}
+.create-channel-container .channel-wrap .btn-wrap button:nth-child(2) {
+  border: none;
+  background: #cdcece;
+  color: white;
+}
