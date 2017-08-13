@@ -13,6 +13,7 @@ exports.getAll = (req, res) => {
 exports.addChannel = (req, res) => {
 	const db = app.get('db')
 	const {channel, id} = req.body
+	//todo: check if channel already exists
 	db.add_channel([channel, id]).then(channel => {
 		if (channel.length < 1) return res.status(404).send()
 		res.status(200).send(channel)

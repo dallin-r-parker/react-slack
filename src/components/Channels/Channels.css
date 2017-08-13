@@ -9,6 +9,9 @@
   .channel-title:hover {
     color: black;
     cursor: pointer; }
+  .channel-title a {
+    text-decoration: none;
+    color: inherit; }
   .channel-title p {
     margin: 0;
     padding: 10px 11px 0; }

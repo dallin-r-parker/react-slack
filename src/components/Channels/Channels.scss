@@ -1,16 +1,20 @@
 @import '../../styles/base.scss';
 
-.channel-title{
-	font-family: $lato;
-	&:hover{
-		color: black;
-		cursor: pointer;
-	}
-	p {
-		margin:0;
-		padding:10px 11px 0;
-		span{
-			padding-right: 2px;
-		}
-	}
+.channel-title {
+  font-family: $lato;
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  p {
+    margin: 0;
+    padding: 10px 11px 0;
+    span {
+      padding-right: 2px;
+    }
+  }
 }

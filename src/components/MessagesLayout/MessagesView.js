@@ -36,7 +36,7 @@ class MessagesLayout extends Component {
       const time = moment().format('h:mm A');
       if (!data.data) {
         const newMessage = {
-          time: time,
+          time,
           message: data,
           user: this.props.currentUser
         };
@@ -44,7 +44,7 @@ class MessagesLayout extends Component {
       } else if (data.data) {
         const url = data.data[0].images.downsized;
         const newMessage = {
-          time: time,
+          time,
           message: this.props.message,
           user: this.props.currentUser,
           url

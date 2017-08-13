@@ -7,6 +7,7 @@ import './index.css';
 import LoginCheck from './Routes/LoginCheck';
 import RegisterCheck from './Routes/RegisterCheck';
 import ChannelCheck from './Routes/ChannelCheck';
+import App from './App';
 
 ReactDOM.render(
   <HashRouter>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route exact path="/" component={LoginCheck} />
         <Route path="/register" component={RegisterCheck} />
         <Route path="/channels" component={ChannelCheck} />
+        <Route path="/channel/:channel_id" component={App} />
       </Switch>
     </Provider>
   </HashRouter>,
