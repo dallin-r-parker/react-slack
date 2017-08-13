@@ -14,7 +14,9 @@ exports.mainChannel = (socket) => {
 
 			axios.get(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${process.env.GIPHY_KEY}&limit=1`)
 				.then(res => {
+					console.log('res: ', res)
 					const {data} = res
+					console.log('data: ', data)
 					socket.broadcast.emit('chat_message', data)
 					socket.emit('chat_message', data)
 				})

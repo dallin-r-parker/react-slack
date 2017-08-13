@@ -1,4 +1,5 @@
 export function updateInput(value) {
+  console.log('updateInput: ', value);
   return {
     type: 'UPDATE_MESSAGE',
     payload: value
@@ -37,9 +38,10 @@ export function updateGiphy(value) {
   };
 }
 
-export function updateGiphyUrl(value) {
+export function updateGiphMessages(value) {
+  console.log('updateGiph: ', value);
   return {
-    type: 'UPDATE_URL',
+    type: 'UPDATE_GIPH_MESSAGES',
     payload: value
   };
 }
