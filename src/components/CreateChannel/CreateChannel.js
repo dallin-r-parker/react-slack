@@ -8,9 +8,7 @@ export default function CreateChannel(props) {
   const handleCreate = () => props.add();
 
   const channelInput = e => {
-    if (e.target.value) {
-      props.newChannel(e.target.value);
-    }
+    props.newChannel(e.target.value);
   };
 
   return (
