@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect, Route } from 'react-router-dom';
-import Login from '../components/Login/Login/Login';
+import { Route, Redirect } from 'react-router-dom';
+import App from '../App';
 
-class LoginCheck extends Component {
+class ChannelCheck extends Component {
   componentDidMount() {
     return (
       <Route
-        exact
-        path="/"
-        render={() =>
-          this.props.authed ? <Redirect to="/channels" /> : <Login />}
+        path="/channels"
+        render={() => (this.props.authed ? <App /> : <Redirect to="/" />)}
       />
     );
   }
@@ -30,4 +28,4 @@ function mapStateToProps({ loginReducer }) {
   };
 }
 
-export default connect(mapStateToProps)(LoginCheck);
+export default connect(mapStateToProps)(ChannelCheck);
