@@ -6,16 +6,15 @@ import store from './redux/store';
 import './index.css';
 import LoginCheck from './Routes/LoginCheck';
 import RegisterCheck from './Routes/RegisterCheck';
-import App from './App';
+import ChannelCheck from './Routes/ChannelCheck';
 
-//TODO: make route check if home is logged in.
 ReactDOM.render(
   <HashRouter>
     <Provider store={store}>
       <Switch>
         <Route exact path="/" component={LoginCheck} />
         <Route path="/register" component={RegisterCheck} />
-        <Route path="/home" component={App} />
+        <Route path="/channels" component={ChannelCheck} />
       </Switch>
     </Provider>
   </HashRouter>,

@@ -25,7 +25,6 @@ export default function AddImg(props) {
     context.drawImage(v, 0, 0, w, h);
     const data = canvas.toDataURL('image/png');
     p.setAttribute('src', data);
-    //    console.log('p: ', p);
     e.preventDefault();
   }
 

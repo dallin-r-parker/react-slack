@@ -5,10 +5,13 @@ import moment from 'moment';
 import Header from '../Header/Header';
 import ChatInput from './ChatInput/ChatInput';
 import Messages from './Messages';
+import GiphMessage from './GiphMessage';
 import './MessagesView.css';
 import {
+  updateGiphy,
   updateInput,
-  updateMessages
+  updateMessages,
+  updateGiphMessages
 } from '../../redux/actions/messageActions';
 
 const socket = io();
@@ -25,33 +28,39 @@ class MessagesLayout extends Component {
   componentDidMount() {
     this.connectUser();
   }
-
-  connectUser() {
-    socket.on('user_connected', this.props.currentUser);
-  }
+  connectUser = () => socket.on('user_connected', this.props.currentUser);
+  handleChatUpdate = value => this.props.updateInput(value);
 
   handleChatMessage() {
-    //TODO: WORK ON MAKING SURE THE USER IS SENDING THEIR NAME & Receiving OTHER NAMES
     socket.on('chat_message', data => {
       const time = moment().format('h:mm A');
-      const newMessage = {
-        time: time,
-        message: data,
-        user: this.props.currentUser
-      };
-      const reset = '';
-      this.props.updateMessages(newMessage);
-      this.props.updateInput(reset);
+      if (!data.data) {
+        const newMessage = {
+          time: time,
+          message: data,
+          user: this.props.currentUser
+        };
+        this.props.updateMessages(newMessage);
+      } else if (data.data) {
+        const url = data.data[0].images.downsized;
+        const newMessage = {
+          time: time,
+          message: this.props.message,
+          user: this.props.currentUser,
+          url
+        };
+        this.props.updateGiphMessages(newMessage);
+      }
     });
   }
 
-  handleChatUpdate(value) {
-    this.props.updateInput(value);
-  }
-
   sendMessage(e) {
-    if (e === 13) {
-      socket.emit('chat_message', { message: this.props.message });
+    const { message } = this.props;
+    if (e === 13 && message.includes('/giphy')) {
+      this.props.updateInput('');
+      socket.emit('chat_message', { message: message, type: 'giphy' });
+    } else if (e === 13) {
+      socket.emit('chat_message', { message: message, type: null });
     }
   }
 
@@ -66,10 +75,23 @@ class MessagesLayout extends Component {
         />
       );
     });
+
+    const giphmessages = this.props.giphMessages.map((e, i) => {
+      return (
+        <GiphMessage
+          key={i}
+          message={e.message.message}
+          user={e.user}
+          time={e.time}
+          url={e.url.url}
+        />
+      );
+    });
     return (
       <div className="message-wrap">
         <Header />
         <div className="message-container">
+          {giphmessages}
           {messages}
         </div>
         <ChatInput
@@ -86,11 +108,17 @@ function mapStateToProps({ messageReducer }) {
   return {
     message: messageReducer.message,
     messages: messageReducer.messages,
+    giphMessages: messageReducer.giphMessages,
     currentUser: messageReducer.currentUser,
-    userId: messageReducer.userId
+    userId: messageReducer.userId,
+    giphy: messageReducer.giphy,
+    url: messageReducer.url
   };
 }
 
-export default connect(mapStateToProps, { updateInput, updateMessages })(
-  MessagesLayout
-);
+export default connect(mapStateToProps, {
+  updateInput,
+  updateMessages,
+  updateGiphy,
+  updateGiphMessages
+})(MessagesLayout);

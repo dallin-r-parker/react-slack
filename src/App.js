@@ -28,7 +28,7 @@ class App extends Component {
 
   handleAddChannel() {
     const { newChannel, userId } = this.props;
-    const channel = Object.assign({}, { channels: newChannel, id: userId });
+    const channel = Object.assign({}, { channel: newChannel, id: userId });
     this.props.addChannel(channel);
     this.handleCloseModal();
   }
@@ -47,7 +47,12 @@ class App extends Component {
 
   render() {
     const navChannels = this.props.channels.map((channel, i) =>
-      <Nav key={i} channels={channel} />
+      <Nav
+        key={i}
+        id={channel.channel_id}
+        owner={channel.users_channels}
+        channels={channel.channel_name}
+      />
     );
     const directChannel = this.props.directChannels.map((dm, i) =>
       <DirectChannels key={i} dm={dm} />

@@ -1,7 +1,7 @@
 import React from 'react';
-import './Messages.css';
+import './GiphMessage.css';
 
-export default function Messages(props) {
+export default function GiphMessage(props) {
   return (
     <div className="message-content">
       <p>
@@ -13,6 +13,7 @@ export default function Messages(props) {
       <p>
         {props.message}
       </p>
+      <img src={props.url} height={props.height} width={props.width} alt="" />
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.message-content {
+  width: 100%;
+  display: flex;
+  font-size: 1em;
+  align-items: center; }
+  .message-content:hover {
+    background: whitesmoke;
+    cursor: default; }
+  .message-content p {
+    margin-right: 10px; }
+  .message-content p:nth-child(1) {
+    color: gray;
+    font-size: .7em; }
+  .message-content p:nth-child(2) {
+    color: #31da6e;
+    font-weight: bold; }
