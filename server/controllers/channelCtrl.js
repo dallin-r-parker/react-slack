@@ -9,6 +9,7 @@ exports.getAll = (req, res) => {
 	})
 		.catch(err => console.log("ERR: ", err ))
 }
+
 exports.addChannel = (req, res) => {
 	const db = app.get('db')
 	const {channel, id} = req.body

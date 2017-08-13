@@ -34,6 +34,7 @@ app.use(session({
 // SERVER CONTROLLERS ==================================
 const {loginUser, registerUser, checkUser} = require('./controllers/userCtrl')
 const {getAll, addChannel} = require('./controllers/channelCtrl')
+const {getMessage, addMessage} = require('./controllers/messageCtrl')
 const {giphyGet} = require('./controllers/giphyCtrl')
 const {mainChannel} = require('./sockets/channelSockets')
 
@@ -46,10 +47,11 @@ io.on('connection', mainChannel)
 
 // GET ENDPOINTS ======================================
 app.get('/api/all-channels', getAll)
+app.get('/api/channel-messages', getMessage)
 app.get('/api/check-user', checkUser)
 // GIPHY ENDPOINTS =====================================
 app.post('/api/giphy/query?=', giphyGet)
-
+app.post('/api/add-message', addMessage)
 // POST ENDPOINTS ======================================
 app.post('/api/channel', addChannel)
 
