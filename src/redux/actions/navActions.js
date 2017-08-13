@@ -14,6 +14,7 @@ export function checkUser() {
 export function getChannels() {
   return function(dispatch) {
     axios.get('/api/all-channels').then(({ data }) => {
+      console.log('getChannels REs: ', data);
       dispatch({
         type: 'GET_CHANNELS',
         payload: data

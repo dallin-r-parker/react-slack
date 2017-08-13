@@ -5,9 +5,7 @@ exports.getAll = (req, res) => {
 	if(!user_id) return res.status(404).send()
 	const db = app.get('db')
 	db.all_channels([user_id]).then(channels => {
-		console.log("channels: ", channels)
-		//let channels = channel.map(e => (e.channel_name))
-		//res.status(200).send(channels)
+		res.status(200).send(channels)
 	})
 		.catch(err => console.log("ERR: ", err ))
 }
